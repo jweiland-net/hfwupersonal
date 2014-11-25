@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+<T3DataStructure>
+  <meta>
+    <langDisable>1</langDisable>
+  </meta>
+  <sheets>
+    <sDEF>
+      <ROOT>
+      	<TCEforms>
+      	  <sheetTitle>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sheet1</sheetTitle>
+      	</TCEforms>
+      	<type>array</type>
+      	<el>
+
+    	  <storagePID>
+    	    <TCEforms>
+    	      <exclude>1</exclude>
+    	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.storagePID.label</label>
+    	      <config>
+          		<type>group</type>
+          		<internal_type>db</internal_type>
+          		<allowed>pages</allowed>
+          		<size>3</size>
+          		<maxitems>22</maxitems>
+          		<minitems>0</minitems>
+          		<show_thumbs>0</show_thumbs>
+    	      </config>
+    	    </TCEforms>
+    	  </storagePID>
+
+      	  <template>
+      	    <TCEforms>
+      	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.template.label</label>
+      	      <config>
+            		<type>group</type>
+            		<internal_type>file</internal_type>
+            		<allowed>tmpl,html</allowed>
+            		<max_size>100</max_size>
+            		<uploadfolder>uploads/tx_hfwupersonal</uploadfolder>
+            		<maxitems>1</maxitems>
+            		<size>1</size>
+            		<selectedListStyle>Width:180px</selectedListStyle>
+      	      </config>
+      	    </TCEforms>
+      	  </template>      	  
+
+      	  <theCode>
+      	    <TCEforms>	
+      	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.theCode.label</label>
+      	      <config>
+            		<type>select</type>
+            		<items type="array">
+            		  <numIndex index="0" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.theCode.listMode</numIndex>
+            		    <numIndex index="1">LIST</numIndex>
+            		  </numIndex>
+            		  <numIndex index="1" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.theCode.singleMode</numIndex>
+            		    <numIndex index="1">SINGLE</numIndex>
+            		  </numIndex>
+            		  <numIndex index="2" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.theCode.selectMode</numIndex>
+            		    <numIndex index="1">SELECT</numIndex>
+            		  </numIndex>
+            		  <numIndex index="3" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.theCode.searchMode</numIndex>
+            		    <numIndex index="1">SEARCH</numIndex>
+            		  </numIndex>
+
+            		</items>	
+      	      </config>
+      	    </TCEforms>
+      	  </theCode>
+
+    	  <singlePID>
+    	    <TCEforms>
+    	      <exclude>1</exclude>
+    	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.singlePID.label</label>
+    	      <config>
+          		<type>group</type>
+          		<internal_type>db</internal_type>
+          		<allowed>pages</allowed>
+          		<size>2</size>
+          		<maxitems>1</maxitems>
+          		<minitems>0</minitems>
+          		<show_thumbs>0</show_thumbs>
+    	      </config>
+    	    </TCEforms>
+    	  </singlePID>
+
+
+
+       	</el>
+      </ROOT>
+    </sDEF>
+
+    <sSortkeys>
+      <ROOT>
+      	<TCEforms>
+      	  <sheetTitle>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sheet2</sheetTitle>
+      	</TCEforms>
+      	<type>array</type>
+      	<el>
+      	  
+      	  <sortKey1>
+      	    <TCEforms>	
+      	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey1.label</label>
+      	      <config>
+            		<type>select</type>
+            		<items type="array">
+            		  <numIndex index="0" type="array">
+            		    <numIndex index="0">-----</numIndex>
+            		    <numIndex index="1">noSort</numIndex>
+            		  </numIndex>
+            		  <numIndex index="1" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey1.sort1</numIndex>
+            		    <numIndex index="1">sort1</numIndex>
+            		  </numIndex>
+            		  <numIndex index="2" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey1.sort2</numIndex>
+            		    <numIndex index="1">sort2</numIndex>
+            		  </numIndex>
+            		  <numIndex index="3" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey1.nachname</numIndex>
+            		    <numIndex index="1">nachname</numIndex>
+            		  </numIndex>
+            		  <numIndex index="4" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey1.senatsort</numIndex>
+            		    <numIndex index="1">senatsort</numIndex>
+            		  </numIndex>
+            		  <numIndex index="5" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey1.hochschulrat</numIndex>
+            		    <numIndex index="1">hochschulratsort</numIndex>
+            		  </numIndex>
+            		</items>	
+      	      </config>
+      	    </TCEforms>
+      	  </sortKey1>
+
+      	  <sortKey2>
+      	    <TCEforms>	
+      	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey2.label</label>
+      	      <config>
+            		<type>select</type>
+            		<items type="array">
+            		  <numIndex index="0" type="array">
+            		    <numIndex index="0">-----</numIndex>
+            		    <numIndex index="1">noSort</numIndex>
+            		  </numIndex>
+            		  <numIndex index="1" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey2.sort1</numIndex>
+            		    <numIndex index="1">sort1</numIndex>
+            		  </numIndex>
+            		  <numIndex index="2" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey2.sort2</numIndex>
+            		    <numIndex index="1">sort2</numIndex>
+            		  </numIndex>
+            		  <numIndex index="3" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey2.nachname</numIndex>
+            		    <numIndex index="1">nachname</numIndex>
+            		  </numIndex>
+            		  <numIndex index="4" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey2.senatsort</numIndex>
+            		    <numIndex index="1">senatsort</numIndex>
+            		  </numIndex>
+            		  <numIndex index="5" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey2.hochschulratsort</numIndex>
+            		    <numIndex index="1">hochschulratsort</numIndex>
+            		  </numIndex>
+            		</items>	
+      	      </config>
+      	    </TCEforms>
+      	  </sortKey2>
+
+      	  <sortKey3>
+      	    <TCEforms>	
+      	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey3.label</label>
+      	      <config>
+            		<type>select</type>
+            		<items type="array">
+            		  <numIndex index="0" type="array">
+            		    <numIndex index="0">-----</numIndex>
+            		    <numIndex index="1">noSort</numIndex>
+            		  </numIndex>
+            		  <numIndex index="1" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey3.sort1</numIndex>
+            		    <numIndex index="1">sort1</numIndex>
+            		  </numIndex>
+            		  <numIndex index="2" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey3.sort2</numIndex>
+            		    <numIndex index="1">sort2</numIndex>
+            		  </numIndex>
+            		  <numIndex index="3" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey3.nachname</numIndex>
+            		    <numIndex index="1">nachname</numIndex>
+            		  </numIndex>
+            		  <numIndex index="4" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey3.senatsort</numIndex>
+            		    <numIndex index="1">senatsort</numIndex>
+            		  </numIndex>
+            		  <numIndex index="5" type="array">
+            		    <numIndex index="0">LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sortKey3.hochschulratsort</numIndex>
+            		    <numIndex index="1">hochschulratsort</numIndex>
+            		  </numIndex>
+            		</items>	
+      	      </config>
+      	    </TCEforms>
+      	  </sortKey3>
+      	  
+       	</el>
+      </ROOT>
+    </sSortkeys>
+    <sFilter>
+      <ROOT>
+      	<TCEforms>
+      	  <sheetTitle>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sheet3</sheetTitle>
+      	</TCEforms>
+      	<type>array</type>
+      	<el>
+
+      	  <filter1>
+      	    <TCEforms>	
+      	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.filter1.label</label>
+      	      <config>
+            		<type>select</type>
+            		<items type="array">
+            		  <numIndex index="0" type="array">
+            		    <numIndex index="0">-----</numIndex>
+            		    <numIndex index="1">noFilter</numIndex>
+            		  </numIndex>
+            		</items>
+                <foreign_table>tx_hfwupersonal_sw</foreign_table>
+                <foreign_table_where>AND tx_hfwupersonal_sw.hidden = 0 ORDER BY sw ASC</foreign_table_where>
+            		<maxitems>10</maxitems>
+            		<size>10</size>
+            		<multiple>1</multiple>
+            		<selectedListStyle>width:250px</selectedListStyle>
+            		<itemListStyle>width:250px</itemListStyle>
+      	      </config>
+      	    </TCEforms>
+      	  </filter1>
+     	
+      	  <filter2>
+      	    <TCEforms>	
+      	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.filter2.label</label>
+      	      <config>
+            		<type>select</type>
+            		<items type="array">
+            		  <numIndex index="0" type="array">
+            		    <numIndex index="0">-----</numIndex>
+            		    <numIndex index="1">noFilter</numIndex>
+            		  </numIndex>
+            		</items>
+                <foreign_table>tx_hfwupersonal_sw</foreign_table>
+                <foreign_table_where>AND tx_hfwupersonal_sw.hidden = 0 ORDER BY sw ASC</foreign_table_where>
+            		<maxitems>10</maxitems>
+            		<size>10</size>
+            		<multiple>1</multiple>
+            		<selectedListStyle>width:250px</selectedListStyle>
+            		<itemListStyle>width:250px</itemListStyle>
+      	      </config>
+      	    </TCEforms>
+      	  </filter2>
+
+      	  <filter3>
+      	    <TCEforms>	
+      	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.filter3.label</label>
+      	      <config>
+            		<type>select</type>
+            		<items type="array">
+            		  <numIndex index="0" type="array">
+            		    <numIndex index="0">-----</numIndex>
+            		    <numIndex index="1">noFilter</numIndex>
+            		  </numIndex>
+            		</items>
+                <foreign_table>tx_hfwupersonal_sw</foreign_table>
+                <foreign_table_where>AND tx_hfwupersonal_sw.hidden = 0 ORDER BY sw ASC</foreign_table_where>
+            		<maxitems>10</maxitems>
+            		<size>10</size>
+            		<multiple>1</multiple>
+            		<selectedListStyle>width:250px</selectedListStyle>
+            		<itemListStyle>width:250px</itemListStyle>
+      	      </config>
+      	    </TCEforms>
+      	  </filter3>
+
+      	</el>
+      </ROOT>
+    </sFilter>
+
+    <sSingle>
+      <ROOT>
+      	<TCEforms>
+      	  <sheetTitle>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sheet4</sheetTitle>
+      	</TCEforms>
+      	<type>array</type>
+      	<el>
+      	
+      	  <name>
+      	    <TCEforms>
+      	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.name.label</label>
+      	      <config>
+            		<type>input</type>
+            		<size>24</size>
+            		<max>48</max>
+            		<eval>trim</eval>
+      	      </config>
+      	    </TCEforms>
+      	  </name>
+      
+      	  <surname>
+      	    <TCEforms>
+      	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.surname.label</label>
+      	      <config>
+            		<type>input</type>
+            		<size>24</size>
+            		<max>48</max>
+            		<eval>trim</eval>
+      	      </config>
+      	    </TCEforms>
+      	  </surname>
+
+      	  <uid>
+      	    <TCEforms>
+      	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.uid.label</label>
+      	      <config>
+            		<type>input</type>
+            		<size>5</size>
+            		<max>5</max>
+            		<eval>trim</eval>
+      	      </config>
+      	    </TCEforms>
+      	  </uid>
+
+      	</el>
+      </ROOT>
+    </sSingle>
+    
+    <sSearch>
+      <ROOT>
+      	<TCEforms>
+      	  <sheetTitle>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.sheet5</sheetTitle>
+      	</TCEforms>
+      	<type>array</type>
+      	<el>
+      	
+      	  <nameCheck>
+      	    <TCEforms>
+      	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.nameCheck.label</label>
+      	      <config>
+      		      <type>check</type>
+      	      </config>
+      	    </TCEforms>
+      	  </nameCheck>
+
+      	  <functionCheck>
+      	    <TCEforms>
+      	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.functionCheck.label</label>
+      	      <config>
+      		      <type>check</type>
+      	      </config>
+      	    </TCEforms>
+      	  </functionCheck>
+
+      	  <activityCheck>
+      	    <TCEforms>
+      	      <label>LLL:EXT:hfwupersonal/locallang_tca.php:hfwupersonal.pi_flexform.activityCheck.label</label>
+      	      <config>
+      		      <type>check</type>
+      	      </config>
+      	    </TCEforms>
+      	  </activityCheck>
+
+      	</el>
+      </ROOT>
+    </sSearch>
+
+    
+  </sheets>
+</T3DataStructure>
+

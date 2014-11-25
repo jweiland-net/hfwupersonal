@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-24T16:08:08Z" product-name="hfwupersonal">
+		<header/>
+		<body>
+			<trans-unit id="tx_hfwupersonal_domain_model_address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_address.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_address.zip">
+				<source>Zip</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_address.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person">
+				<source>Person</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.first_name">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.last_name">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.image_comment">
+				<source>Image Comment</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.links">
+				<source>Links</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.frontend_group">
+				<source>Frontend Group</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.backend_group">
+				<source>Backend Group</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.position">
+				<source>Function</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.activity">
+				<source>Activity</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_position">
+				<source>Function</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_position.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_position.telephone">
+				<source>Telephone</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_position.fax">
+				<source>Fax</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_position.response_times">
+				<source>Response Times</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_position.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_location.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_location.room">
+				<source>Room</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_link">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_link.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_fegroup">
+				<source>Fe Group</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_begroup">
+				<source>Be Group</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_syscategory">
+				<source>Sys Category</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_activity">
+				<source>Activity</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_activity.faculty">
+				<source>Faculty</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_activity.curse_of_studies">
+				<source>Curse Of Studies</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_activity.research">
+				<source>Research</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_activity.employment">
+				<source>Employment</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_activity.special_field">
+				<source>Special Field</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_building">
+				<source>Building</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_building.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_building.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_room">
+				<source>Room</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_room.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_room.floor">
+				<source>Floor</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_room.building">
+				<source>Building</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

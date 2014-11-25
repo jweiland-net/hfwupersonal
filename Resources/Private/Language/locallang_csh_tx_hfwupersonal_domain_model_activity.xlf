@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-24T16:08:08Z" product-name="hfwupersonal">
+		<header/>
+		<body>
+			<trans-unit id="faculty.description">
+				<source>faculty</source>
+			</trans-unit>
+			<trans-unit id="curse_of_studies.description">
+				<source>curseOfStudies</source>
+			</trans-unit>
+			<trans-unit id="research.description">
+				<source>research</source>
+			</trans-unit>
+			<trans-unit id="employment.description">
+				<source>employment</source>
+			</trans-unit>
+			<trans-unit id="special_field.description">
+				<source>specialField</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

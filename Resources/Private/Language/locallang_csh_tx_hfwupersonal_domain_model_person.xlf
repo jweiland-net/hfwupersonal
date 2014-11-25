@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-24T16:08:08Z" product-name="hfwupersonal">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="first_name.description">
+				<source>firstName</source>
+			</trans-unit>
+			<trans-unit id="last_name.description">
+				<source>lastName</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="image.description">
+				<source>image</source>
+			</trans-unit>
+			<trans-unit id="image_comment.description">
+				<source>imageComment</source>
+			</trans-unit>
+			<trans-unit id="category.description">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="links.description">
+				<source>Links</source>
+			</trans-unit>
+			<trans-unit id="frontend_group.description">
+				<source>FeGroup</source>
+			</trans-unit>
+			<trans-unit id="backend_group.description">
+				<source>BeGroup</source>
+			</trans-unit>
+			<trans-unit id="address.description">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="location.description">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="position.description">
+				<source>Function</source>
+			</trans-unit>
+			<trans-unit id="activity.description">
+				<source>Activity</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

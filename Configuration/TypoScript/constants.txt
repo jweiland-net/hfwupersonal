@@ -1,0 +1,15 @@
+
+plugin.tx_hfwupersonal {
+	view {
+		# cat=plugin.tx_hfwupersonal/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:hfwupersonal/Resources/Private/Templates/
+		# cat=plugin.tx_hfwupersonal/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:hfwupersonal/Resources/Private/Partials/
+		# cat=plugin.tx_hfwupersonal/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:hfwupersonal/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_hfwupersonal//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
