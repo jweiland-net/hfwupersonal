@@ -43,14 +43,13 @@ CREATE TABLE tx_hfwupersonal_domain_model_person (
 	email varchar(255) DEFAULT '' NOT NULL,
 	image int(11) unsigned NOT NULL default '0',
 	image_comment varchar(255) DEFAULT '' NOT NULL,
-	category int(11) unsigned DEFAULT '0' NOT NULL,
 	links int(11) unsigned DEFAULT '0' NOT NULL,
 	frontend_group int(11) unsigned DEFAULT '0',
 	backend_group int(11) unsigned DEFAULT '0',
 	address int(11) unsigned DEFAULT '0',
-	location int(11) unsigned DEFAULT '0' NOT NULL,
-	position int(11) unsigned DEFAULT '0' NOT NULL,
-	activity int(11) unsigned DEFAULT '0' NOT NULL,
+	locations int(11) unsigned DEFAULT '0' NOT NULL,
+	positions int(11) unsigned DEFAULT '0' NOT NULL,
+	activities int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -85,7 +84,6 @@ CREATE TABLE tx_hfwupersonal_domain_model_position (
 	telephone varchar(255) DEFAULT '' NOT NULL,
 	fax varchar(255) DEFAULT '' NOT NULL,
 	response_times varchar(255) DEFAULT '' NOT NULL,
-	category int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -149,6 +147,7 @@ CREATE TABLE tx_hfwupersonal_domain_model_link (
 	person int(11) unsigned DEFAULT '0' NOT NULL,
 
 	title varchar(255) DEFAULT '' NOT NULL,
+	link varchar(255) DEFAULT '' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

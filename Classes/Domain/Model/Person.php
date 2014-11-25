@@ -78,7 +78,7 @@ class Person extends AbstractEntity {
 	/**
 	 * Categories
 	 *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Hfwupersonal\Domain\Model\SysCategory>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
 	 */
 	protected $categories = NULL;
 
@@ -274,23 +274,23 @@ class Person extends AbstractEntity {
 	}
 
 	/**
-	 * Adds a SysCategory
+	 * Adds a Category
 	 *
-	 * @param \JWeiland\Hfwupersonal\Domain\Model\SysCategory $category
+	 * @param \TYPO3\CMS\Extbase\Domain\Model\Category $category
 	 * @return void
 	 */
-	public function addCategory(\JWeiland\Hfwupersonal\Domain\Model\SysCategory $category) {
+	public function addCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $category) {
 		$this->categories->attach($category);
 	}
 
 	/**
-	 * Removes a SysCategory
+	 * Removes a Category
 	 *
-	 * @param \JWeiland\Hfwupersonal\Domain\Model\SysCategory $categoryToRemove The SysCategory to be removed
+	 * @param \TYPO3\CMS\Extbase\Domain\Model\Category $category
 	 * @return void
 	 */
-	public function removeCategory(\JWeiland\Hfwupersonal\Domain\Model\SysCategory $categoryToRemove) {
-		$this->categories->detach($categoryToRemove);
+	public function removeCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $category) {
+		$this->categories->detach($category);
 	}
 
 	/**

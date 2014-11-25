@@ -1,7 +1,6 @@
 <?php
 namespace JWeiland\Hfwupersonal\Domain\Model;
 
-
 /***************************************************************
  *
  *  Copyright notice
@@ -26,11 +25,12 @@ namespace JWeiland\Hfwupersonal\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
  * Links
  */
-class Link extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Link extends AbstractEntity {
 
 	/**
 	 * title
@@ -38,6 +38,13 @@ class Link extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @var string
 	 */
 	protected $title = '';
+
+	/**
+	 * Link
+	 *
+	 * @var string
+	 */
+	protected $link = '';
 
 	/**
 	 * Returns the title
@@ -55,7 +62,26 @@ class Link extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return void
 	 */
 	public function setTitle($title) {
-		$this->title = $title;
+		$this->title = (string)$title;
+	}
+
+	/**
+	 * Returns the link
+	 *
+	 * @return string $link
+	 */
+	public function getLink() {
+		return $this->link;
+	}
+
+	/**
+	 * Sets the link
+	 *
+	 * @param string $link
+	 * @return void
+	 */
+	public function setLink($link) {
+		$this->link = (string)$link;
 	}
 
 }

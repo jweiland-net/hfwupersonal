@@ -15,6 +15,7 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_address.city">
 				<source>City</source>
 			</trans-unit>
+
 			<trans-unit id="tx_hfwupersonal_domain_model_person">
 				<source>Person</source>
 			</trans-unit>
@@ -60,6 +61,7 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_person.activity">
 				<source>Activity</source>
 			</trans-unit>
+
 			<trans-unit id="tx_hfwupersonal_domain_model_position">
 				<source>Function</source>
 			</trans-unit>
@@ -78,6 +80,7 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_position.category">
 				<source>Category</source>
 			</trans-unit>
+
 			<trans-unit id="tx_hfwupersonal_domain_model_location">
 				<source>Location</source>
 			</trans-unit>
@@ -87,21 +90,17 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_location.room">
 				<source>Room</source>
 			</trans-unit>
+
 			<trans-unit id="tx_hfwupersonal_domain_model_link">
 				<source>Link</source>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_link.title">
 				<source>Title</source>
 			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_fegroup">
-				<source>Fe Group</source>
+			<trans-unit id="tx_hfwupersonal_domain_model_link.link">
+				<source>Title</source>
 			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_begroup">
-				<source>Be Group</source>
-			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_syscategory">
-				<source>Sys Category</source>
-			</trans-unit>
+
 			<trans-unit id="tx_hfwupersonal_domain_model_activity">
 				<source>Activity</source>
 			</trans-unit>
@@ -120,6 +119,7 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_activity.special_field">
 				<source>Special Field</source>
 			</trans-unit>
+
 			<trans-unit id="tx_hfwupersonal_domain_model_building">
 				<source>Building</source>
 			</trans-unit>
@@ -129,6 +129,7 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_building.address">
 				<source>Address</source>
 			</trans-unit>
+
 			<trans-unit id="tx_hfwupersonal_domain_model_room">
 				<source>Room</source>
 			</trans-unit>

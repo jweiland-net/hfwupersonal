@@ -138,24 +138,6 @@ return array(
 				'eval' => 'trim'
 			),
 		),
-		'category' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_position.category',
-			'config' => array(
-				'type' => 'inline',
-				'foreign_table' => 'tx_hfwupersonal_domain_model_syscategory',
-				'minitems' => 0,
-				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
-			),
-		),
-		
 		'person' => array(
 			'config' => array(
 				'type' => 'passthrough',

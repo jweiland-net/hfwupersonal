@@ -99,9 +99,6 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_begroup">
 				<source>Be Group</source>
 			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_syscategory">
-				<source>Sys Category</source>
-			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_activity">
 				<source>Activity</source>
 			</trans-unit>

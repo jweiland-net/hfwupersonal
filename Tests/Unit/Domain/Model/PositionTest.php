@@ -34,14 +34,14 @@ namespace JWeiland\Hfwupersonal\Tests\Unit\Domain\Model;
  *
  * @author Stefan Froemken <sfroemken@jweiland.net>
  */
-class FunctionTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+class PositionTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
-	 * @var \JWeiland\Hfwupersonal\Domain\Model\Function
+	 * @var \JWeiland\Hfwupersonal\Domain\Model\Position
 	 */
 	protected $subject = NULL;
 
 	protected function setUp() {
-		$this->subject = new \JWeiland\Hfwupersonal\Domain\Model\Function();
+		$this->subject = new \JWeiland\Hfwupersonal\Domain\Model\Position();
 	}
 
 	protected function tearDown() {
@@ -150,17 +150,4 @@ class FunctionTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 		);
 	}
 
-	/**
-	 * @test
-	 */
-	public function setCategoryForSysCategorySetsCategory() {
-		$categoryFixture = new \JWeiland\Hfwupersonal\Domain\Model\SysCategory();
-		$this->subject->setCategory($categoryFixture);
-
-		$this->assertAttributeEquals(
-			$categoryFixture,
-			'category',
-			$this->subject
-		);
-	}
 }

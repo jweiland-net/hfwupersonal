@@ -21,9 +21,6 @@
 			<trans-unit id="image_comment.description">
 				<source>imageComment</source>
 			</trans-unit>
-			<trans-unit id="category.description">
-				<source>Category</source>
-			</trans-unit>
 			<trans-unit id="links.description">
 				<source>Links</source>
 			</trans-unit>
@@ -36,13 +33,13 @@
 			<trans-unit id="address.description">
 				<source>Address</source>
 			</trans-unit>
-			<trans-unit id="location.description">
+			<trans-unit id="locations.description">
 				<source>Location</source>
 			</trans-unit>
-			<trans-unit id="position.description">
+			<trans-unit id="positions.description">
 				<source>Function</source>
 			</trans-unit>
-			<trans-unit id="activity.description">
+			<trans-unit id="activities.description">
 				<source>Activity</source>
 			</trans-unit>
 		</body>

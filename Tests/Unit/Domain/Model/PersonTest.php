@@ -190,58 +190,6 @@ class PersonTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getCategoryReturnsInitialValueForSysCategory() {
-		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$this->assertEquals(
-			$newObjectStorage,
-			$this->subject->getCategory()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setCategoryForObjectStorageContainingSysCategorySetsCategory() {
-		$category = new \JWeiland\Hfwupersonal\Domain\Model\SysCategory();
-		$objectStorageHoldingExactlyOneCategory = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$objectStorageHoldingExactlyOneCategory->attach($category);
-		$this->subject->setCategory($objectStorageHoldingExactlyOneCategory);
-
-		$this->assertAttributeEquals(
-			$objectStorageHoldingExactlyOneCategory,
-			'category',
-			$this->subject
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function addCategoryToObjectStorageHoldingCategory() {
-		$category = new \JWeiland\Hfwupersonal\Domain\Model\SysCategory();
-		$categoryObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
-		$categoryObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($category));
-		$this->inject($this->subject, 'category', $categoryObjectStorageMock);
-
-		$this->subject->addCategory($category);
-	}
-
-	/**
-	 * @test
-	 */
-	public function removeCategoryFromObjectStorageHoldingCategory() {
-		$category = new \JWeiland\Hfwupersonal\Domain\Model\SysCategory();
-		$categoryObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
-		$categoryObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($category));
-		$this->inject($this->subject, 'category', $categoryObjectStorageMock);
-
-		$this->subject->removeCategory($category);
-
-	}
-
-	/**
-	 * @test
-	 */
 	public function getLinksReturnsInitialValueForLink() {
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
@@ -422,7 +370,7 @@ class PersonTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
-			$this->subject->getFunction()
+			$this->subject->getPositions()
 		);
 	}
 
@@ -430,10 +378,10 @@ class PersonTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function setFunctionForObjectStorageContainingFunctionSetsFunction() {
-		$function = new \JWeiland\Hfwupersonal\Domain\Model\Function();
+		$function = new \JWeiland\Hfwupersonal\Domain\Model\Position();
 		$objectStorageHoldingExactlyOneFunction = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneFunction->attach($function);
-		$this->subject->setFunction($objectStorageHoldingExactlyOneFunction);
+		$this->subject->setPositions($objectStorageHoldingExactlyOneFunction);
 
 		$this->assertAttributeEquals(
 			$objectStorageHoldingExactlyOneFunction,
@@ -446,24 +394,24 @@ class PersonTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function addFunctionToObjectStorageHoldingFunction() {
-		$function = new \JWeiland\Hfwupersonal\Domain\Model\Function();
+		$function = new \JWeiland\Hfwupersonal\Domain\Model\Position();
 		$functionObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
 		$functionObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($function));
 		$this->inject($this->subject, 'function', $functionObjectStorageMock);
 
-		$this->subject->addFunction($function);
+		$this->subject->addPosition($function);
 	}
 
 	/**
 	 * @test
 	 */
 	public function removeFunctionFromObjectStorageHoldingFunction() {
-		$function = new \JWeiland\Hfwupersonal\Domain\Model\Function();
+		$function = new \JWeiland\Hfwupersonal\Domain\Model\Position();
 		$functionObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
 		$functionObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($function));
 		$this->inject($this->subject, 'function', $functionObjectStorageMock);
 
-		$this->subject->removeFunction($function);
+		$this->subject->removePosition($function);
 
 	}
 
@@ -474,7 +422,7 @@ class PersonTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
-			$this->subject->getActivity()
+			$this->subject->getActivities()
 		);
 	}
 
@@ -485,7 +433,7 @@ class PersonTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 		$activity = new \JWeiland\Hfwupersonal\Domain\Model\Activity();
 		$objectStorageHoldingExactlyOneActivity = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneActivity->attach($activity);
-		$this->subject->setActivity($objectStorageHoldingExactlyOneActivity);
+		$this->subject->setActivities($objectStorageHoldingExactlyOneActivity);
 
 		$this->assertAttributeEquals(
 			$objectStorageHoldingExactlyOneActivity,

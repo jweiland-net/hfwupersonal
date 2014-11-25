@@ -1,0 +1,9 @@
+<?php
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
+	'hfwupersonal',
+	'tx_hfwupersonal_domain_model_person'
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
+	'hfwupersonal',
+	'tx_hfwupersonal_domain_model_position'
+);

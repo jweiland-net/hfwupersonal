@@ -63,7 +63,7 @@ class Position extends AbstractEntity {
 	/**
 	 * category
 	 *
-	 * @var \JWeiland\Hfwupersonal\Domain\Model\SysCategory
+	 * @var \TYPO3\CMS\Extbase\Domain\Model\Category
 	 */
 	protected $category = NULL;
 
@@ -146,7 +146,7 @@ class Position extends AbstractEntity {
 	/**
 	 * Returns the category
 	 *
-	 * @return \JWeiland\Hfwupersonal\Domain\Model\SysCategory $category
+	 * @return \TYPO3\CMS\Extbase\Domain\Model\Category $category
 	 */
 	public function getCategory() {
 		return $this->category;
@@ -155,10 +155,10 @@ class Position extends AbstractEntity {
 	/**
 	 * Sets the category
 	 *
-	 * @param \JWeiland\Hfwupersonal\Domain\Model\SysCategory $category
+	 * @param \TYPO3\CMS\Extbase\Domain\Model\Category $category
 	 * @return void
 	 */
-	public function setCategory(\JWeiland\Hfwupersonal\Domain\Model\SysCategory $category) {
+	public function setCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $category) {
 		$this->category = $category;
 	}
 

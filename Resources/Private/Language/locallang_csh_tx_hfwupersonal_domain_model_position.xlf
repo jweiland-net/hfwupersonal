@@ -15,9 +15,6 @@
 			<trans-unit id="response_times.description">
 				<source>responseTimes</source>
 			</trans-unit>
-			<trans-unit id="category.description">
-				<source>category</source>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>
