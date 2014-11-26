@@ -2,7 +2,6 @@
 # Table structure for table 'tx_hfwupersonal_domain_model_address'
 #
 CREATE TABLE tx_hfwupersonal_domain_model_address (
-
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
@@ -26,14 +25,12 @@ CREATE TABLE tx_hfwupersonal_domain_model_address (
 	KEY parent (pid),
 
  KEY language (l10n_parent,sys_language_uid)
-
 );
 
 #
 # Table structure for table 'tx_hfwupersonal_domain_model_person'
 #
 CREATE TABLE tx_hfwupersonal_domain_model_person (
-
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
@@ -67,14 +64,12 @@ CREATE TABLE tx_hfwupersonal_domain_model_person (
 	KEY parent (pid),
 
  KEY language (l10n_parent,sys_language_uid)
-
 );
 
 #
 # Table structure for table 'tx_hfwupersonal_domain_model_position'
 #
 CREATE TABLE tx_hfwupersonal_domain_model_position (
-
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
@@ -101,14 +96,12 @@ CREATE TABLE tx_hfwupersonal_domain_model_position (
 	KEY parent (pid),
 
  KEY language (l10n_parent,sys_language_uid)
-
 );
 
 #
 # Table structure for table 'tx_hfwupersonal_domain_model_location'
 #
 CREATE TABLE tx_hfwupersonal_domain_model_location (
-
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
@@ -133,14 +126,12 @@ CREATE TABLE tx_hfwupersonal_domain_model_location (
 	KEY parent (pid),
 
  KEY language (l10n_parent,sys_language_uid)
-
 );
 
 #
 # Table structure for table 'tx_hfwupersonal_domain_model_link'
 #
 CREATE TABLE tx_hfwupersonal_domain_model_link (
-
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
@@ -165,14 +156,12 @@ CREATE TABLE tx_hfwupersonal_domain_model_link (
 	KEY parent (pid),
 
  KEY language (l10n_parent,sys_language_uid)
-
 );
 
 #
 # Table structure for table 'tx_hfwupersonal_domain_model_activity'
 #
 CREATE TABLE tx_hfwupersonal_domain_model_activity (
-
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
@@ -200,14 +189,12 @@ CREATE TABLE tx_hfwupersonal_domain_model_activity (
 	KEY parent (pid),
 
  KEY language (l10n_parent,sys_language_uid)
-
 );
 
 #
 # Table structure for table 'tx_hfwupersonal_domain_model_building'
 #
 CREATE TABLE tx_hfwupersonal_domain_model_building (
-
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
@@ -230,14 +217,12 @@ CREATE TABLE tx_hfwupersonal_domain_model_building (
 	KEY parent (pid),
 
  KEY language (l10n_parent,sys_language_uid)
-
 );
 
 #
 # Table structure for table 'tx_hfwupersonal_domain_model_room'
 #
 CREATE TABLE tx_hfwupersonal_domain_model_room (
-
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
@@ -261,41 +246,84 @@ CREATE TABLE tx_hfwupersonal_domain_model_room (
 	KEY parent (pid),
 
  KEY language (l10n_parent,sys_language_uid)
+);
 
+#
+# Table structure for table 'tx_hfwupersonal_person_location_mm'
+#
+CREATE TABLE tx_hfwupersonal_person_location_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
 );
 
 #
 # Table structure for table 'tx_hfwupersonal_domain_model_link'
 #
 CREATE TABLE tx_hfwupersonal_domain_model_link (
-
 	person  int(11) unsigned DEFAULT '0' NOT NULL,
-
 );
 
 #
 # Table structure for table 'tx_hfwupersonal_domain_model_location'
 #
 CREATE TABLE tx_hfwupersonal_domain_model_location (
-
 	person  int(11) unsigned DEFAULT '0' NOT NULL,
+);
 
+#
+# Table structure for table 'tx_hfwupersonal_person_location_mm'
+#
+CREATE TABLE tx_hfwupersonal_person_location_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
 );
 
 #
 # Table structure for table 'tx_hfwupersonal_domain_model_position'
 #
 CREATE TABLE tx_hfwupersonal_domain_model_position (
-
 	person  int(11) unsigned DEFAULT '0' NOT NULL,
+);
 
+#
+# Table structure for table 'tx_hfwupersonal_person_position_mm'
+#
+CREATE TABLE tx_hfwupersonal_person_position_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
 );
 
 #
 # Table structure for table 'tx_hfwupersonal_domain_model_activity'
 #
 CREATE TABLE tx_hfwupersonal_domain_model_activity (
-
 	person  int(11) unsigned DEFAULT '0' NOT NULL,
+);
 
+#
+# Table structure for table 'tx_hfwupersonal_person_activity_mm'
+#
+CREATE TABLE tx_hfwupersonal_person_activity_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
 );

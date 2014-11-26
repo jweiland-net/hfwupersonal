@@ -2,7 +2,9 @@
 return array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person',
-		'label' => 'title',
+		'label' => 'last_name',
+		'label_alt' => 'first_name',
+		'label_alt_force' => TRUE,
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
@@ -30,7 +32,6 @@ return array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
-	
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -223,7 +224,10 @@ return array(
 				'type' => 'select',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_location',
 				'foreign_field' => 'person',
-				'maxitems'      => 99,
+				'MM' => 'tx_hfwupersonal_person_location_mm',
+				'size' => 5,
+				'autoSizeMax' => 10,
+				'maxitems' => 99,
 			),
 		),
 		'positions' => array(
@@ -233,7 +237,10 @@ return array(
 				'type' => 'select',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_position',
 				'foreign_field' => 'person',
-				'maxitems'      => 99,
+				'MM' => 'tx_hfwupersonal_person_position_mm',
+				'size' => 5,
+				'autoSizeMax' => 10,
+				'maxitems' => 99,
 			),
 		),
 		'activities' => array(
@@ -243,7 +250,10 @@ return array(
 				'type' => 'select',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_activity',
 				'foreign_field' => 'person',
-				'maxitems'      => 99,
+				'MM' => 'tx_hfwupersonal_person_activity_mm',
+				'size' => 5,
+				'autoSizeMax' => 10,
+				'maxitems' => 99,
 			),
 		),
 	),

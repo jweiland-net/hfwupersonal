@@ -152,7 +152,7 @@
 
 			<trans-unit id="tx_hfwupersonal_domain_model_building">
 				<source>Building</source>
-				<target>Einrichtung</target>
+				<target>Gebäude</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_building.title">
 				<source>Title</source>
