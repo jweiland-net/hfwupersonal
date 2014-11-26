@@ -1,7 +1,6 @@
 <?php
 namespace JWeiland\Hfwupersonal\Domain\Repository;
 
-
 /***************************************************************
  *
  *  Copyright notice
@@ -26,11 +25,33 @@ namespace JWeiland\Hfwupersonal\Domain\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * The repository for Persons
  */
-class PersonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class PersonRepository extends Repository {
 
-	
+	/**
+	 * filter persons by given categories from FlexForm
+	 *
+	 * @param string $categories
+	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface|array
+	 */
+	public function findByCategories($categories) {
+		$query = $this->createQuery();
+		$categories = GeneralUtility::trimExplode(',', $categories, TRUE);
+		$constraint = array();
+		foreach ($categories as $category) {
+			$constraint[] = $query->contains('categories', $category);
+		}
+		if (empty($constraint)) {
+			// ToDo: log this condition, because this will normally not executed
+			return $query->execute();
+		} else {
+			return $query->matching($query->logicalOr($constraint))->execute();
+		}
+	}
+
 }

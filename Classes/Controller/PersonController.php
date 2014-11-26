@@ -46,7 +46,11 @@ class PersonController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 * @return void
 	 */
 	public function listAction() {
-		$persons = $this->personRepository->findAll();
+		if (!empty($this->settings['filterByCategories'])) {
+			$persons = $this->personRepository->findByCategories($this->settings['filterByCategories']);
+		} else {
+			$persons = $this->personRepository->findAll();
+		}
 		$this->view->assign('persons', $persons);
 	}
 
