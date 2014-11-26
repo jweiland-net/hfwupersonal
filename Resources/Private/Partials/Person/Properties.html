@@ -1,5 +1,4 @@
-
-<table class="tx-hfwupersonal" >
+<table class="tx-hfwupersonal">
 	<tr>
 		<td><f:translate key="tx_hfwupersonal_domain_model_person.title" /></td>
 		<td>{person.title}</td>
@@ -18,11 +17,86 @@
 	</tr>
 	<tr>
 		<td><f:translate key="tx_hfwupersonal_domain_model_person.image" /></td>
-		<td>{person.image}
-		</td>
+		<td>{person.image}</td>
 	</tr>
 	<tr>
 		<td><f:translate key="tx_hfwupersonal_domain_model_person.image_comment" /></td>
 		<td>{person.imageComment}</td>
 	</tr>
+	<tr>
+		<td><f:translate key="tx_hfwupersonal_domain_model_person.links" /></td>
+		<td>
+			<ul>
+				<f:for each="{person.links}" as="link">
+					<li><f:link.external uri="{link.link}">{link.title}</f:link.external></li>
+				</f:for>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_hfwupersonal_domain_model_person.frontend_user_group" /></td>
+		<td>{person.frontendUserGroup.title}</td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_hfwupersonal_domain_model_person.backend_user_groups" /></td>
+		<td>
+			<ul>
+				<f:for each="{person.backendUserGroups}" as="backendUserGroup">
+					<li>{backendUserGroup.title}</li>
+				</f:for>
+			</ul>
+		</td>
+	</tr>
 </table>
+
+<h2>Address</h2>
+
+<table class="tx-hfwupersonal">
+	<tr>
+		<td><f:translate key="tx_hfwupersonal_domain_model_address.address" /></td>
+		<td>{person.address.address}</td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_hfwupersonal_domain_model_address.zip" /></td>
+		<td>{person.address.zip}</td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_hfwupersonal_domain_model_address.city" /></td>
+		<td>{person.address.city}</td>
+	</tr>
+</table>
+
+<h2>Locations</h2>
+
+<ul>
+	<f:for each="{person.locations}" as="location">
+		<li><strong>{location.title}:</strong> {location.room}</li>
+	</f:for>
+</ul>
+
+<h2>Positions</h2>
+
+<ul>
+	<f:for each="{person.positions}" as="position">
+		<li>
+			<strong>{position.title}</strong><br />
+			{position.telephone}<br />
+			{position.fax}<br />
+			{position.responseTimes}
+		</li>
+	</f:for>
+</ul>
+
+<h2>Activities</h2>
+
+<ul>
+	<f:for each="{person.activities}" as="activity">
+		<li>
+			{activity.faculty}<br />
+			{activity.curseOfStudies}<br />
+			{activity.research}<br />
+			{activity.employment}<br />
+			{activity.specialField}<br />
+		</li>
+	</f:for>
+</ul>

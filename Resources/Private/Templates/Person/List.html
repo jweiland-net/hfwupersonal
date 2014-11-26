@@ -11,19 +11,17 @@
 			<th><f:translate key="tx_hfwupersonal_domain_model_person.first_name" /></th>
 			<th><f:translate key="tx_hfwupersonal_domain_model_person.last_name" /></th>
 			<th><f:translate key="tx_hfwupersonal_domain_model_person.email" /></th>
-			<th><f:translate key="tx_hfwupersonal_domain_model_person.image" /></th>
-			<th><f:translate key="tx_hfwupersonal_domain_model_person.image_comment" /></th>
 		</tr>
 
-		<f:for each="{persons}" as="person">
-			<tr>
-				<td>{person.title}</td>
-				<td>{person.firstName}</td>
-				<td><f:link.action action="show" arguments="{person: person}">{person.lastName}</f:link.action></td>
-				<td>{person.email}</td>
-				<td>{person.image}</td>
-				<td>{person.imageComment}</td>
-			</tr>
-		</f:for>
+		<f:widget.paginate objects="{persons}" as="paginatedPersons" configuration="{itemsPerPage: 50}">
+			<f:for each="{paginatedPersons}" as="person">
+				<tr>
+					<td>{person.title}</td>
+					<td>{person.firstName}</td>
+					<td><f:link.action action="show" arguments="{person: person}">{person.lastName}</f:link.action></td>
+					<td>{person.email}</td>
+				</tr>
+			</f:for>
+		</f:widget.paginate>
 	</table>
 </f:section>
