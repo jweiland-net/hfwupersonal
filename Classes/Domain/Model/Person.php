@@ -41,6 +41,13 @@ class Person extends AbstractEntity {
 	protected $title = '';
 
 	/**
+	 * priority
+	 *
+	 * @var int
+	 */
+	protected $priority = 0;
+
+	/**
 	 * firstName
 	 *
 	 * @var string
@@ -177,6 +184,25 @@ class Person extends AbstractEntity {
 	 */
 	public function setTitle($title) {
 		$this->title = $title;
+	}
+
+	/**
+	 * Returns the priority
+	 *
+	 * @return int $priority
+	 */
+	public function getPriority() {
+		return $this->priority;
+	}
+
+	/**
+	 * Sets the priority
+	 *
+	 * @param int $priority
+	 * @return void
+	 */
+	public function setPriority($priority) {
+		$this->priority = $priority;
 	}
 
 	/**

@@ -23,6 +23,21 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_person.title">
 				<source>Title</source>
 			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.priority">
+				<source>Priority</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.priority.1">
+				<source>Priority 1 (Rector)</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.priority.2">
+				<source>Priority 2 (Dean)</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.priority.3">
+				<source>Priority 3 (Lecturer)</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.priority.4">
+				<source>Priority 4 (Employee)</source>
+			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.first_name">
 				<source>First Name</source>
 			</trans-unit>
@@ -93,7 +108,7 @@
 				<source>Title</source>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_link.link">
-				<source>Title</source>
+				<source>Link</source>
 			</trans-unit>
 
 			<trans-unit id="tx_hfwupersonal_domain_model_activity">
@@ -102,8 +117,8 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_activity.faculty">
 				<source>Faculty</source>
 			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_activity.curse_of_studies">
-				<source>Curse Of Studies</source>
+			<trans-unit id="tx_hfwupersonal_domain_model_activity.course_of_studies">
+				<source>Course Of Studies</source>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_activity.research">
 				<source>Research</source>

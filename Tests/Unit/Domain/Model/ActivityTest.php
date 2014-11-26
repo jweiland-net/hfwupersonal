@@ -74,10 +74,10 @@ class ActivityTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getCurseOfStudiesReturnsInitialValueForString() {
+	public function getCourseOfStudiesReturnsInitialValueForString() {
 		$this->assertSame(
 			'',
-			$this->subject->getCurseOfStudies()
+			$this->subject->getCourseOfStudies()
 		);
 	}
 
@@ -85,7 +85,7 @@ class ActivityTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function setCurseOfStudiesForStringSetsCurseOfStudies() {
-		$this->subject->setCurseOfStudies('Conceived at T3CON10');
+		$this->subject->setCourseOfStudies('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
 			'Conceived at T3CON10',

@@ -6,8 +6,8 @@
 			<trans-unit id="faculty.description">
 				<source>faculty</source>
 			</trans-unit>
-			<trans-unit id="curse_of_studies.description">
-				<source>curseOfStudies</source>
+			<trans-unit id="course_of_studies.description">
+				<source>courseOfStudies</source>
 			</trans-unit>
 			<trans-unit id="research.description">
 				<source>research</source>

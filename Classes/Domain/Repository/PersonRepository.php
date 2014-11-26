@@ -26,12 +26,22 @@ namespace JWeiland\Hfwupersonal\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * The repository for Persons
  */
 class PersonRepository extends Repository {
+
+	/**
+	 * @var array
+	 */
+	protected $defaultOrderings = array(
+		'priority' => QueryInterface::ORDER_ASCENDING,
+		'lastName' => QueryInterface::ORDER_ASCENDING,
+		'firstName' => QueryInterface::ORDER_ASCENDING
+	);
 
 	/**
 	 * filter persons by given categories from FlexForm

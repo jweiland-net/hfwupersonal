@@ -40,11 +40,11 @@ class Activity extends AbstractEntity {
 	protected $faculty = '';
 
 	/**
-	 * curseOfStudies
+	 * courseOfStudies
 	 *
 	 * @var string
 	 */
-	protected $curseOfStudies = '';
+	protected $courseOfStudies = '';
 
 	/**
 	 * research
@@ -87,22 +87,22 @@ class Activity extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the curseOfStudies
+	 * Returns the courseOfStudies
 	 *
-	 * @return string $curseOfStudies
+	 * @return string $courseOfStudies
 	 */
-	public function getCurseOfStudies() {
-		return $this->curseOfStudies;
+	public function getCourseOfStudies() {
+		return $this->courseOfStudies;
 	}
 
 	/**
-	 * Sets the curseOfStudies
+	 * Sets the courseOfStudies
 	 *
-	 * @param string $curseOfStudies
+	 * @param string $courseOfStudies
 	 * @return void
 	 */
-	public function setCurseOfStudies($curseOfStudies) {
-		$this->curseOfStudies = $curseOfStudies;
+	public function setCourseOfStudies($courseOfStudies) {
+		$this->courseOfStudies = $courseOfStudies;
 	}
 
 	/**

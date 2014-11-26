@@ -35,6 +35,7 @@ CREATE TABLE tx_hfwupersonal_domain_model_person (
 	pid int(11) DEFAULT '0' NOT NULL,
 
 	title varchar(255) DEFAULT '' NOT NULL,
+	priority tinyint(1) DEFAULT '0' NOT NULL,
 	first_name varchar(255) DEFAULT '' NOT NULL,
 	last_name varchar(255) DEFAULT '' NOT NULL,
 	email varchar(255) DEFAULT '' NOT NULL,
@@ -168,7 +169,7 @@ CREATE TABLE tx_hfwupersonal_domain_model_activity (
 	person int(11) unsigned DEFAULT '0' NOT NULL,
 
 	faculty varchar(255) DEFAULT '' NOT NULL,
-	curse_of_studies varchar(255) DEFAULT '' NOT NULL,
+	course_of_studies varchar(255) DEFAULT '' NOT NULL,
 	research varchar(255) DEFAULT '' NOT NULL,
 	employment varchar(255) DEFAULT '' NOT NULL,
 	special_field varchar(255) DEFAULT '' NOT NULL,
