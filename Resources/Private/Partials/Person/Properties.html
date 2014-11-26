@@ -1,51 +1,28 @@
 
 <table class="tx-hfwupersonal" >
 	<tr>
-		<td>
-			<f:translate key="tx_hfwupersonal_domain_model_person.title" />
-		</td>
-		<td>
-		{person.title}
+		<td><f:translate key="tx_hfwupersonal_domain_model_person.title" /></td>
+		<td>{person.title}</td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_hfwupersonal_domain_model_person.first_name" /></td>
+		<td>{person.firstName}</td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_hfwupersonal_domain_model_person.last_name" /></td>
+		<td>{person.lastName}</td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_hfwupersonal_domain_model_person.email" /></td>
+		<td><f:link.email email="{person.email}">E-Mail</f:link.email></td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_hfwupersonal_domain_model_person.image" /></td>
+		<td>{person.image}
 		</td>
 	</tr>
 	<tr>
-		<td>
-			<f:translate key="tx_hfwupersonal_domain_model_person.first_name" />
-		</td>
-		<td>
-		{person.firstName}
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<f:translate key="tx_hfwupersonal_domain_model_person.last_name" />
-		</td>
-		<td>
-		{person.lastName}
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<f:translate key="tx_hfwupersonal_domain_model_person.email" />
-		</td>
-		<td>
-		{person.email}
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<f:translate key="tx_hfwupersonal_domain_model_person.image" />
-		</td>
-		<td>
-				<f:image src="{person.image.originalResource.publicUrl}" width="200"/>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<f:translate key="tx_hfwupersonal_domain_model_person.image_comment" />
-		</td>
-		<td>
-		{person.imageComment}
-		</td>
+		<td><f:translate key="tx_hfwupersonal_domain_model_person.image_comment" /></td>
+		<td>{person.imageComment}</td>
 	</tr>
 </table>

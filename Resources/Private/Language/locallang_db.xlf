@@ -3,6 +3,7 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-24T16:08:08Z" product-name="hfwupersonal">
 		<header/>
 		<body>
+
 			<trans-unit id="tx_hfwupersonal_domain_model_address">
 				<source>Address</source>
 			</trans-unit>
@@ -37,29 +38,26 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_person.image_comment">
 				<source>Image Comment</source>
 			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_person.category">
-				<source>Category</source>
-			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.links">
 				<source>Links</source>
 			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_person.frontend_group">
-				<source>Frontend Group</source>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.frontend_user_group">
+				<source>Frontend Usergroup</source>
 			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_person.backend_group">
-				<source>Backend Group</source>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.backend_user_group">
+				<source>Backend Usergroup</source>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.address">
 				<source>Address</source>
 			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_person.location">
-				<source>Location</source>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.locations">
+				<source>Locations</source>
 			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_person.position">
-				<source>Function</source>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.positions">
+				<source>Functions</source>
 			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_person.activity">
-				<source>Activity</source>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.activities">
+				<source>Activities</source>
 			</trans-unit>
 
 			<trans-unit id="tx_hfwupersonal_domain_model_position">
@@ -75,10 +73,7 @@
 				<source>Fax</source>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_position.response_times">
-				<source>Response Times</source>
-			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_position.category">
-				<source>Category</source>
+				<source>Office hours</source>
 			</trans-unit>
 
 			<trans-unit id="tx_hfwupersonal_domain_model_location">
@@ -142,6 +137,7 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_room.building">
 				<source>Building</source>
 			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

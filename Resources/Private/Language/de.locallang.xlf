@@ -6,136 +6,178 @@
 
 			<trans-unit id="tx_hfwupersonal_domain_model_address">
 				<source>Address</source>
+				<target>Adresse</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_address.address">
 				<source>Address</source>
+				<target>Adresse</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_address.zip">
 				<source>Zip</source>
+				<target>PLZ</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_address.city">
 				<source>City</source>
+				<target>Stadt</target>
 			</trans-unit>
 
 			<trans-unit id="tx_hfwupersonal_domain_model_person">
 				<source>Person</source>
+				<target>Person</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.title">
 				<source>Title</source>
+				<target>Titel</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.first_name">
 				<source>First Name</source>
+				<target>Vorname</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.last_name">
 				<source>Last Name</source>
+				<target>Nachname</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.email">
 				<source>Email</source>
+				<target>E-Mail</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.image">
 				<source>Image</source>
+				<target>Bild</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.image_comment">
 				<source>Image Comment</source>
+				<target>Bildkommentar</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.links">
 				<source>Links</source>
+				<target>Links</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.frontend_user_group">
 				<source>Frontend Usergroup</source>
+				<target>Frontend Benutzergruppe</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.backend_user_group">
 				<source>Backend Usergroup</source>
+				<target>Backend Benutzergruppen</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.address">
 				<source>Address</source>
+				<target>Adresse</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.locations">
 				<source>Locations</source>
+				<target>Einrichtungen</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.positions">
 				<source>Functions</source>
+				<target>Funktionen</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.activities">
 				<source>Activities</source>
+				<target>Aktivitäten</target>
 			</trans-unit>
 
 			<trans-unit id="tx_hfwupersonal_domain_model_position">
 				<source>Function</source>
+				<target>Funktion</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_position.title">
 				<source>Title</source>
+				<target>Titel</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_position.telephone">
 				<source>Telephone</source>
+				<target>Telefon</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_position.fax">
 				<source>Fax</source>
+				<target>Fax</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_position.response_times">
 				<source>Office hours</source>
+				<target>Sprechzeiten</target>
 			</trans-unit>
 
 			<trans-unit id="tx_hfwupersonal_domain_model_location">
 				<source>Location</source>
+				<target>Einrichtung</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_location.title">
 				<source>Title</source>
+				<target>Titel</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_location.room">
 				<source>Room</source>
+				<target>Raum</target>
 			</trans-unit>
 
 			<trans-unit id="tx_hfwupersonal_domain_model_link">
 				<source>Link</source>
+				<target>Link</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_link.title">
 				<source>Title</source>
+				<target>Titel</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_link.link">
-				<source>Title</source>
+				<source>Link</source>
+				<target>Link</target>
 			</trans-unit>
 
 			<trans-unit id="tx_hfwupersonal_domain_model_activity">
 				<source>Activity</source>
+				<target>Aktivität</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_activity.faculty">
 				<source>Faculty</source>
+				<target>Fakultät</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_activity.curse_of_studies">
 				<source>Curse Of Studies</source>
+				<target>Studiengang</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_activity.research">
 				<source>Research</source>
+				<target>Forschung</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_activity.employment">
 				<source>Employment</source>
+				<target>Beschäftigung</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_activity.special_field">
 				<source>Special Field</source>
+				<target>Fachgebiet</target>
 			</trans-unit>
 
 			<trans-unit id="tx_hfwupersonal_domain_model_building">
 				<source>Building</source>
+				<target>Einrichtung</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_building.title">
 				<source>Title</source>
+				<target>Titel</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_building.address">
 				<source>Address</source>
+				<target>Adresse</target>
 			</trans-unit>
 
 			<trans-unit id="tx_hfwupersonal_domain_model_room">
 				<source>Room</source>
+				<target>Raum</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_room.number">
 				<source>Number</source>
+				<target>Nummer</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_room.floor">
 				<source>Floor</source>
+				<target>Etage</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_room.building">
 				<source>Building</source>
+				<target>Einrichtung</target>
 			</trans-unit>
 
 		</body>

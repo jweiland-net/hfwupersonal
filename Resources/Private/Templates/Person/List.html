@@ -17,12 +17,12 @@
 
 		<f:for each="{persons}" as="person">
 			<tr>
-				<td><f:link.action action="show" arguments="{person: person}">{person.title}</f:link.action></td>
-				<td><f:link.action action="show" arguments="{person: person}">{person.firstName}</f:link.action></td>
+				<td>{person.title}</td>
+				<td>{person.firstName}</td>
 				<td><f:link.action action="show" arguments="{person: person}">{person.lastName}</f:link.action></td>
-				<td><f:link.action action="show" arguments="{person: person}">{person.email}</f:link.action></td>
-				<td><f:link.action action="show" arguments="{person: person}">{person.image.originalResource.name}</f:link.action></td>
-				<td><f:link.action action="show" arguments="{person: person}">{person.imageComment}</f:link.action></td>
+				<td>{person.email}</td>
+				<td>{person.image}</td>
+				<td>{person.imageComment}</td>
 			</tr>
 		</f:for>
 	</table>

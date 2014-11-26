@@ -21,10 +21,10 @@ return array(
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('hfwupersonal') . 'Resources/Public/Icons/tx_hfwupersonal_domain_model_person.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, first_name, last_name, email, image, image_comment, category, links, frontend_group, backend_group, address, locations, positions, activities',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, first_name, last_name, email, image, image_comment, category, links, frontend_user_group, backend_user_group, address, locations, positions, activities',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, first_name, last_name, email, image, image_comment, category, links, frontend_group, backend_group, address, locations, positions, activities, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, first_name, last_name, email, image, image_comment, category, links, frontend_user_group, backend_user_group, address, locations, positions, activities, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -142,10 +142,10 @@ return array(
 		'image' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.image',
-			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-				'image',
-				array('maxitems' => 1),
-				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
 			),
 		),
 		'image_comment' => array(
@@ -164,7 +164,7 @@ return array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_link',
 				'foreign_field' => 'person',
-				'maxitems' => 9999,
+				'maxitems' => 99,
 				'appearance' => array(
 					'collapseAll' => 0,
 					'levelLinksPosition' => 'top',
@@ -174,9 +174,9 @@ return array(
 				),
 			),
 		),
-		'frontend_group' => array(
+		'frontend_user_group' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.frontend_group',
+			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.frontend_user_group',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'fe_groups',
@@ -188,18 +188,15 @@ return array(
 				'maxitems' => 1,
 			),
 		),
-		'backend_group' => array(
+		'backend_user_group' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.backend_group',
+			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.backend_user_group',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'be_groups',
 				'foreign_table_where' => 'ORDER BY be_groups.title ASC',
-				'items' => array(
-					array('', '')
-				),
 				'minitems' => 0,
-				'maxitems' => 1,
+				'maxitems' => 99,
 			),
 		),
 		'address' => array(
@@ -226,7 +223,7 @@ return array(
 				'type' => 'select',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_location',
 				'foreign_field' => 'person',
-				'maxitems'      => 9999,
+				'maxitems'      => 99,
 			),
 		),
 		'positions' => array(
@@ -236,7 +233,7 @@ return array(
 				'type' => 'select',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_position',
 				'foreign_field' => 'person',
-				'maxitems'      => 9999,
+				'maxitems'      => 99,
 			),
 		),
 		'activities' => array(
@@ -246,7 +243,7 @@ return array(
 				'type' => 'select',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_activity',
 				'foreign_field' => 'person',
-				'maxitems'      => 9999,
+				'maxitems'      => 99,
 			),
 		),
 	),

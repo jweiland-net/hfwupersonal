@@ -13,7 +13,7 @@
 				<source>fax</source>
 			</trans-unit>
 			<trans-unit id="response_times.description">
-				<source>responseTimes</source>
+				<source>Office hours</source>
 			</trans-unit>
 		</body>
 	</file>

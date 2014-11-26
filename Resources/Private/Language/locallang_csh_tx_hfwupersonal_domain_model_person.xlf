@@ -24,11 +24,11 @@
 			<trans-unit id="links.description">
 				<source>Links</source>
 			</trans-unit>
-			<trans-unit id="frontend_group.description">
-				<source>FeGroup</source>
+			<trans-unit id="frontend_user_group.description">
+				<source>Frontend Usergroup</source>
 			</trans-unit>
 			<trans-unit id="backend_group.description">
-				<source>BeGroup</source>
+				<source>Backend Usergroup</source>
 			</trans-unit>
 			<trans-unit id="address.description">
 				<source>Address</source>

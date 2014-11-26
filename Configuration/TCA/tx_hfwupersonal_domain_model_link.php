@@ -108,6 +108,15 @@ return array(
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim',
+			),
+		),
+		'link' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_link.link',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim',
 				'wizards' => array(
 					'_PADDING' => 2,
 					'link' => array(

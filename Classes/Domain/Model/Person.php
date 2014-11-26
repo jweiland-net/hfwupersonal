@@ -98,11 +98,11 @@ class Person extends AbstractEntity {
 	protected $frontendUserGroup = NULL;
 
 	/**
-	 * BeGroup
+	 * BackendUserGroups
 	 *
-	 * @var \JWeiland\Hfwupersonal\Domain\Model\BackendUserGroup
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Hfwupersonal\Domain\Model\BackendUserGroup>
 	 */
-	protected $backendUserGroup = NULL;
+	protected $backendUserGroups = NULL;
 
 	/**
 	 * Address
@@ -120,9 +120,9 @@ class Person extends AbstractEntity {
 	protected $locations = NULL;
 
 	/**
-	 * Function
+	 * Positions
 	 *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Hfwupersonal\Domain\Model\Function>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Hfwupersonal\Domain\Model\Position>
 	 * @cascade remove
 	 */
 	protected $positions = NULL;
@@ -154,6 +154,7 @@ class Person extends AbstractEntity {
 	protected function initStorageObjects() {
 		$this->categories = new ObjectStorage();
 		$this->links = new ObjectStorage();
+		$this->backendUserGroups = new ObjectStorage();
 		$this->locations = new ObjectStorage();
 		$this->positions = new ObjectStorage();
 		$this->activities = new ObjectStorage();
@@ -371,22 +372,42 @@ class Person extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the backendUserGroup
-	 *
-	 * @return \JWeiland\Hfwupersonal\Domain\Model\BackendUserGroup $backendUserGroup
-	 */
-	public function getBackendUserGroup() {
-		return $this->backendUserGroup;
-	}
-
-	/**
-	 * Sets the backendUserGroup
+	 * Adds a bbackendUserGroup
 	 *
 	 * @param \JWeiland\Hfwupersonal\Domain\Model\BackendUserGroup $backendUserGroup
 	 * @return void
 	 */
-	public function setBackendGroup(\JWeiland\Hfwupersonal\Domain\Model\BackendUserGroup $backendUserGroup) {
-		$this->backendUserGroup = $backendUserGroup;
+	public function addBackendUserGroup(\JWeiland\Hfwupersonal\Domain\Model\BackendUserGroup $backendUserGroup) {
+		$this->backendUserGroups->attach($backendUserGroup);
+	}
+
+	/**
+	 * Removes a backendUserGroup
+	 *
+	 * @param \JWeiland\Hfwupersonal\Domain\Model\BackendUserGroup $backendUserGroup
+	 * @return void
+	 */
+	public function removeBackendUserGroup(\JWeiland\Hfwupersonal\Domain\Model\BackendUserGroup $backendUserGroup) {
+		$this->backendUserGroups->detach($backendUserGroup);
+	}
+
+	/**
+	 * Returns the backendUserGroups
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $backendUserGroups
+	 */
+	public function getBackendUserGroups() {
+		return $this->backendUserGroups;
+	}
+
+	/**
+	 * Sets the backendUserGroups
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $backendUserGroups
+	 * @return void
+	 */
+	public function setBackendGroups(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $backendUserGroups) {
+		$this->backendUserGroups = $backendUserGroups;
 	}
 
 	/**
@@ -421,7 +442,7 @@ class Person extends AbstractEntity {
 	/**
 	 * Removes a Location
 	 *
-	 * @param \JWeiland\Hfwupersonal\Domain\Model\Location $location The Location to be removed
+	 * @param \JWeiland\Hfwupersonal\Domain\Model\Location $location
 	 * @return void
 	 */
 	public function removeLocation(\JWeiland\Hfwupersonal\Domain\Model\Location $location) {
