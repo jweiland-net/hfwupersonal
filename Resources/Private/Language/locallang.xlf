@@ -138,6 +138,16 @@
 				<source>Building</source>
 			</trans-unit>
 
+			<trans-unit id="headerForListView">
+				<source>Listing for Persons</source>
+			</trans-unit>
+			<trans-unit id="headerForSingleView">
+				<source>Single View for Person</source>
+			</trans-unit>
+			<trans-unit id="backToList">
+				<source>Back to list</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

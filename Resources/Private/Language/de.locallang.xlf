@@ -180,6 +180,19 @@
 				<target>Einrichtung</target>
 			</trans-unit>
 
+			<trans-unit id="headerForListView">
+				<source>Listing for Persons</source>
+				<target>Auflistung von Personen</target>
+			</trans-unit>
+			<trans-unit id="headerForSingleView">
+				<source>Single View for Person</source>
+				<target>Detailansicht einer Person</target>
+			</trans-unit>
+			<trans-unit id="backToList">
+				<source>Back to list</source>
+				<target>Zurück zur Listenansicht</target>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

@@ -1,3 +1,6 @@
+page.includeCSS {
+	hwfuMain = EXT:hfwupersonal/Resources/Public/Css/Main.css
+}
 
 plugin.tx_hfwupersonal {
 	view {
@@ -23,19 +26,6 @@ plugin.tx_hfwupersonal._CSS_DEFAULT_STYLE (
 	input.f3-form-error {
 		background-color:#FF9F9F;
 		border: 1px #FF0000 solid;
-	}
-
-	.tx-hfwupersonal table {
-		border-collapse:separate;
-		border-spacing:10px;
-	}
-
-	.tx-hfwupersonal table th {
-		font-weight:bold;
-	}
-
-	.tx-hfwupersonal table td {
-		vertical-align:top;
 	}
 
 	.typo3-messages .message-error {
