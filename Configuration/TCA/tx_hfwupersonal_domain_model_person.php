@@ -123,7 +123,8 @@ return array(
 					array('LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.priority.2', 2),
 					array('LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.priority.3', 3),
 					array('LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.priority.4', 4),
-				)
+				),
+				'default' => 4
 			),
 		),
 		'first_name' => array(
