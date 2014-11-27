@@ -4,6 +4,16 @@
 		<header/>
 		<body>
 
+			<trans-unit id="tx_hfwupersonal_domain_model_priority">
+				<source>Priority</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_priority.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_priority.priority">
+				<source>Priority</source>
+			</trans-unit>
+
 			<trans-unit id="tx_hfwupersonal_domain_model_address">
 				<source>Address</source>
 			</trans-unit>
@@ -26,18 +36,6 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_person.priority">
 				<source>Priority</source>
 			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_person.priority.1">
-				<source>Priority 1 (Rector)</source>
-			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_person.priority.2">
-				<source>Priority 2 (Dean)</source>
-			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_person.priority.3">
-				<source>Priority 3 (Lecturer)</source>
-			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_person.priority.4">
-				<source>Priority 4 (Employee)</source>
-			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.first_name">
 				<source>First Name</source>
 			</trans-unit>
@@ -52,6 +50,9 @@
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.image_comment">
 				<source>Image Comment</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.contacts">
+				<source>Contacts</source>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.links">
 				<source>Links</source>
@@ -75,17 +76,27 @@
 				<source>Activities</source>
 			</trans-unit>
 
+			<trans-unit id="tx_hfwupersonal_domain_model_contact">
+				<source>Contact</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_contact.type">
+				<source>Contacttype</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_contact.type.telephone">
+				<source>Telephone</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_contact.type.fax">
+				<source>Fax</source>
+			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_contact.room">
+				<source>Room</source>
+			</trans-unit>
+			
 			<trans-unit id="tx_hfwupersonal_domain_model_position">
 				<source>Function</source>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_position.title">
 				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_position.telephone">
-				<source>Telephone</source>
-			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_position.fax">
-				<source>Fax</source>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_position.response_times">
 				<source>Office hours</source>

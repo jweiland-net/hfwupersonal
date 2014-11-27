@@ -101,7 +101,6 @@ return array(
 				),
 			),
 		),
-
 		'title' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_location.title',
@@ -115,23 +114,13 @@ return array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_location.room',
 			'config' => array(
-				'type' => 'inline',
+				'type' => 'select',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_room',
+				'items' => array(
+					array('', 0)
+				),
 				'minitems' => 0,
 				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
-			),
-		),
-		
-		'person' => array(
-			'config' => array(
-				'type' => 'passthrough',
 			),
 		),
 	),

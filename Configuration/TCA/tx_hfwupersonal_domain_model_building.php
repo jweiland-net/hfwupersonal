@@ -101,7 +101,6 @@ return array(
 				),
 			),
 		),
-
 		'title' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_building.title',
@@ -115,19 +114,23 @@ return array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_building.address',
 			'config' => array(
-				'type' => 'inline',
+				'type' => 'group',
+				'internal_type' => 'db',
+				'allowed' => 'tx_hfwupersonal_domain_model_address',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_address',
-				'minitems' => 0,
+				'MM' => 'tx_hfwupersonal_building_address_mm',
+				'size' => 5,
 				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+						'default' => array(
+							'minimumCharacters' => 3,
+							'searchWholePhrase' => TRUE
+						)
+					)
+				)
 			),
 		),
-		
 	),
 );

@@ -28,86 +28,86 @@ namespace JWeiland\Hfwupersonal\Domain\Model;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Position
+ * Buildings
  */
-class Position extends AbstractEntity {
+class Contact extends AbstractEntity {
 
 	/**
-	 * title
+	 * type
 	 *
 	 * @var string
 	 */
-	protected $title = '';
+	protected $type = '';
 
 	/**
-	 * responseTimes
+	 * contact
 	 *
 	 * @var string
 	 */
-	protected $responseTimes = '';
+	protected $contact = '';
 
 	/**
-	 * category
+	 * Room
 	 *
-	 * @var \TYPO3\CMS\Extbase\Domain\Model\Category
+	 * @var \JWeiland\Hfwupersonal\Domain\Model\Room
 	 */
-	protected $category = NULL;
+	protected $room = NULL;
 
 	/**
-	 * Returns the title
+	 * Returns the type
 	 *
-	 * @return string $title
+	 * @return string $type
 	 */
-	public function getTitle() {
-		return $this->title;
+	public function getType() {
+		return $this->type;
 	}
 
 	/**
-	 * Sets the title
+	 * Sets the type
 	 *
-	 * @param string $title
+	 * @param string $type
 	 * @return void
 	 */
-	public function setTitle($title) {
-		$this->title = $title;
+	public function setType($type) {
+		$this->type = $type;
 	}
 
 	/**
-	 * Returns the responseTimes
+	 * Returns the contact
 	 *
-	 * @return string $responseTimes
+	 * @return string $contact
 	 */
-	public function getResponseTimes() {
-		return $this->responseTimes;
+	public function getContact() {
+		return $this->contact;
 	}
 
 	/**
-	 * Sets the responseTimes
+	 * Sets the contact
 	 *
-	 * @param string $responseTimes
+	 * @param string $contact
 	 * @return void
 	 */
-	public function setResponseTimes($responseTimes) {
-		$this->responseTimes = $responseTimes;
+	public function setContact($contact) {
+		$this->contact = $contact;
 	}
 
 	/**
-	 * Returns the category
+	 * Returns the room
 	 *
-	 * @return \TYPO3\CMS\Extbase\Domain\Model\Category $category
+	 * @return \JWeiland\Hfwupersonal\Domain\Model\Room $room
 	 */
-	public function getCategory() {
-		return $this->category;
+	public function getRoom() {
+		return $this->room;
 	}
 
 	/**
-	 * Sets the category
+	 * Sets the room
 	 *
-	 * @param \TYPO3\CMS\Extbase\Domain\Model\Category $category
+	 * @param \JWeiland\Hfwupersonal\Domain\Model\Room $room
 	 * @return void
 	 */
-	public function setCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $category) {
-		$this->category = $category;
+	public function setRoom($room) {
+		$this->room = $room;
 	}
 
 }

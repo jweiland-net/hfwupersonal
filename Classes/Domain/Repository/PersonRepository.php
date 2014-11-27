@@ -38,7 +38,7 @@ class PersonRepository extends Repository {
 	 * @var array
 	 */
 	protected $defaultOrderings = array(
-		'priority' => QueryInterface::ORDER_ASCENDING,
+		'priority.priority' => QueryInterface::ORDER_ASCENDING,
 		'lastName' => QueryInterface::ORDER_ASCENDING,
 		'firstName' => QueryInterface::ORDER_ASCENDING
 	);

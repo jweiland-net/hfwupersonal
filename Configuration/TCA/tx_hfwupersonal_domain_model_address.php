@@ -3,6 +3,8 @@ return array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_address',
 		'label' => 'address',
+		'label_alt' => 'zip,city',
+		'label_alt_force' => TRUE,
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
@@ -129,6 +131,5 @@ return array(
 				'eval' => 'trim'
 			),
 		),
-		
 	),
 );

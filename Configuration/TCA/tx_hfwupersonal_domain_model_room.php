@@ -62,7 +62,6 @@ return array(
 				'type' => 'passthrough',
 			),
 		),
-
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -102,7 +101,6 @@ return array(
 				),
 			),
 		),
-
 		'number' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_room.number',
@@ -125,19 +123,14 @@ return array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_room.building',
 			'config' => array(
-				'type' => 'inline',
+				'type' => 'select',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_building',
+				'items' => array(
+					array('', 0)
+				),
 				'minitems' => 0,
 				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
 			),
 		),
-		
 	),
 );

@@ -1,8 +1,10 @@
 <?php
 return array(
 	'ctrl' => array(
-		'title'	=> 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_activity',
-		'label' => 'faculty',
+		'title'	=> 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_priority',
+		'label' => 'priority',
+		'label_alt' => 'title',
+		'label_alt_force' => TRUE,
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
@@ -17,14 +19,14 @@ return array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'faculty,course_of_studies,research,employment,special_field',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('hfwupersonal') . 'Resources/Public/Icons/tx_hfwupersonal_domain_model_activity.gif'
+		'searchFields' => 'title',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('hfwupersonal') . 'Resources/Public/Icons/tx_hfwupersonal_domain_model_priority.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, faculty, course_of_studies, research, employment, special_field',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, priority',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, faculty, course_of_studies, research, employment, special_field, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, priority,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -52,8 +54,8 @@ return array(
 				'items' => array(
 					array('', 0),
 				),
-				'foreign_table' => 'tx_hfwupersonal_domain_model_activity',
-				'foreign_table_where' => 'AND tx_hfwupersonal_domain_model_activity.pid=###CURRENT_PID### AND tx_hfwupersonal_domain_model_activity.sys_language_uid IN (-1,0)',
+				'foreign_table' => 'tx_hfwupersonal_domain_model_priority',
+				'foreign_table_where' => 'AND tx_hfwupersonal_domain_model_priority.pid=###CURRENT_PID### AND tx_hfwupersonal_domain_model_priority.sys_language_uid IN (-1,0)',
 			),
 		),
 		'l10n_diffsource' => array(
@@ -61,7 +63,6 @@ return array(
 				'type' => 'passthrough',
 			),
 		),
-
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -101,50 +102,22 @@ return array(
 				),
 			),
 		),
-
-		'faculty' => array(
+		'title' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_activity.faculty',
+			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_priority.title',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim'
+				'eval' => 'trim',
 			),
 		),
-		'course_of_studies' => array(
+		'priority' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_activity.course_of_studies',
+			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_priority.priority',
 			'config' => array(
 				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
-			),
-		),
-		'research' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_activity.research',
-			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
-			),
-		),
-		'employment' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_activity.employment',
-			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
-			),
-		),
-		'special_field' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_activity.special_field',
-			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
+				'size' => 2,
+				'eval' => 'trim,int,uniqueInPid',
 			),
 		),
 	),

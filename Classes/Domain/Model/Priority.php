@@ -28,9 +28,9 @@ namespace JWeiland\Hfwupersonal\Domain\Model;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Position
+ * Links
  */
-class Position extends AbstractEntity {
+class Priority extends AbstractEntity {
 
 	/**
 	 * title
@@ -40,18 +40,11 @@ class Position extends AbstractEntity {
 	protected $title = '';
 
 	/**
-	 * responseTimes
+	 * Priority
 	 *
-	 * @var string
+	 * @var int
 	 */
-	protected $responseTimes = '';
-
-	/**
-	 * category
-	 *
-	 * @var \TYPO3\CMS\Extbase\Domain\Model\Category
-	 */
-	protected $category = NULL;
+	protected $priority = 0;
 
 	/**
 	 * Returns the title
@@ -69,45 +62,26 @@ class Position extends AbstractEntity {
 	 * @return void
 	 */
 	public function setTitle($title) {
-		$this->title = $title;
+		$this->title = (string)$title;
 	}
 
 	/**
-	 * Returns the responseTimes
+	 * Returns the priority
 	 *
-	 * @return string $responseTimes
+	 * @return int $priority
 	 */
-	public function getResponseTimes() {
-		return $this->responseTimes;
+	public function getPriority() {
+		return $this->priority;
 	}
 
 	/**
-	 * Sets the responseTimes
+	 * Sets the priority
 	 *
-	 * @param string $responseTimes
+	 * @param int $priority
 	 * @return void
 	 */
-	public function setResponseTimes($responseTimes) {
-		$this->responseTimes = $responseTimes;
-	}
-
-	/**
-	 * Returns the category
-	 *
-	 * @return \TYPO3\CMS\Extbase\Domain\Model\Category $category
-	 */
-	public function getCategory() {
-		return $this->category;
-	}
-
-	/**
-	 * Sets the category
-	 *
-	 * @param \TYPO3\CMS\Extbase\Domain\Model\Category $category
-	 * @return void
-	 */
-	public function setCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $category) {
-		$this->category = $category;
+	public function setPriority($priority) {
+		$this->priority = $priority;
 	}
 
 }

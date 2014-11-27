@@ -18,6 +18,9 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignat
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'HFWU Personal');
 
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_hfwupersonal_domain_model_priority', 'EXT:hfwupersonal/Resources/Private/Language/locallang_csh_tx_hfwupersonal_domain_model_priority.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_hfwupersonal_domain_model_priority');
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_hfwupersonal_domain_model_address', 'EXT:hfwupersonal/Resources/Private/Language/locallang_csh_tx_hfwupersonal_domain_model_address.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_hfwupersonal_domain_model_address');
 

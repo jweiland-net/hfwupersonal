@@ -130,10 +130,5 @@ return array(
 				'softref' => 'typolink[linkList]',
 			),
 		),
-		'person' => array(
-			'config' => array(
-				'type' => 'passthrough',
-			),
-		),
 	),
 );

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-24T16:08:08Z" product-name="hfwupersonal">
+		<header/>
+		<body>
+
+			<trans-unit id="type.description">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="contact.description">
+				<source>Contact</source>
+			</trans-unit>
+			<trans-unit id="room.description">
+				<source>Room</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

@@ -23,10 +23,10 @@ return array(
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('hfwupersonal') . 'Resources/Public/Icons/tx_hfwupersonal_domain_model_person.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, priority, first_name, last_name, email, image, image_comment, category, links, frontend_user_group, backend_user_group, address, locations, positions, activities',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, priority, first_name, last_name, email, image, image_comment, category, contacts, links, frontend_user_group, backend_user_group, address, locations, positions, activities',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, priority, first_name, last_name, email, image, image_comment, category, links, frontend_user_group, backend_user_group, address, locations, positions, activities, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, priority, first_name, last_name, email, image, image_comment, category, contacts, links, frontend_user_group, backend_user_group, address, locations, positions, activities, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -117,14 +117,14 @@ return array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.priority',
 			'config' => array(
-				'type' => 'radio',
+				'type' => 'select',
+				'foreign_table' => 'tx_hfwupersonal_domain_model_priority',
 				'items' => array(
-					array('LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.priority.1', 1),
-					array('LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.priority.2', 2),
-					array('LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.priority.3', 3),
-					array('LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.priority.4', 4),
+					array('', '')
 				),
-				'default' => 4
+				'size' => 1,
+				'maxitems' => 1,
+				'minitems' => 1,
 			),
 		),
 		'first_name' => array(
@@ -172,13 +172,31 @@ return array(
 				'eval' => 'trim'
 			),
 		),
+		'contacts' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.contacts',
+			'config' => array(
+				'type' => 'inline',
+				'foreign_table' => 'tx_hfwupersonal_domain_model_contact',
+				'MM' => 'tx_hfwupersonal_person_contact_mm',
+				'minitems' => 0,
+				'maxitems' => 99,
+				'appearance' => array(
+					'collapseAll' => 0,
+					'levelLinksPosition' => 'top',
+					'showSynchronizationLink' => 1,
+					'showPossibleLocalizationRecords' => 1,
+					'showAllLocalizationLink' => 1
+				),
+			),
+		),
 		'links' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.links',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_link',
-				'foreign_field' => 'person',
+				'MM' => 'tx_hfwupersonal_person_link_mm',
 				'maxitems' => 99,
 				'appearance' => array(
 					'collapseAll' => 0,
@@ -210,25 +228,32 @@ return array(
 				'type' => 'select',
 				'foreign_table' => 'be_groups',
 				'foreign_table_where' => 'ORDER BY be_groups.title ASC',
+				'size' => 5,
 				'minitems' => 0,
 				'maxitems' => 99,
+				'enableMultiSelectFilterTextfield' => TRUE
 			),
 		),
 		'address' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.address',
 			'config' => array(
-				'type' => 'inline',
+				'type' => 'group',
+				'internal_type' => 'db',
+				'allowed' => 'tx_hfwupersonal_domain_model_address',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_address',
-				'minitems' => 0,
+				'MM' => 'tx_hfwupersonal_person_address_mm',
+				'size' => 5,
 				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+						'default' => array(
+							'minimumCharacters' => 3,
+							'searchWholePhrase' => TRUE
+						)
+					)
+				)
 			),
 		),
 		'locations' => array(
@@ -242,6 +267,7 @@ return array(
 				'size' => 5,
 				'autoSizeMax' => 10,
 				'maxitems' => 99,
+				'enableMultiSelectFilterTextfield' => TRUE
 			),
 		),
 		'positions' => array(
@@ -255,6 +281,7 @@ return array(
 				'size' => 5,
 				'autoSizeMax' => 10,
 				'maxitems' => 99,
+				'enableMultiSelectFilterTextfield' => TRUE
 			),
 		),
 		'activities' => array(
@@ -268,6 +295,7 @@ return array(
 				'size' => 5,
 				'autoSizeMax' => 10,
 				'maxitems' => 99,
+				'enableMultiSelectFilterTextfield' => TRUE
 			),
 		),
 	),

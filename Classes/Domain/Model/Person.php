@@ -43,9 +43,9 @@ class Person extends AbstractEntity {
 	/**
 	 * priority
 	 *
-	 * @var int
+	 * @var \JWeiland\Hfwupersonal\Domain\Model\Priority
 	 */
-	protected $priority = 0;
+	protected $priority = NULL;
 
 	/**
 	 * firstName
@@ -88,6 +88,14 @@ class Person extends AbstractEntity {
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
 	 */
 	protected $categories = NULL;
+
+	/**
+	 * Contacts
+	 *
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Hfwupersonal\Domain\Model\Contact>
+	 * @cascade remove
+	 */
+	protected $contacts = NULL;
 
 	/**
 	 * Links
@@ -160,6 +168,7 @@ class Person extends AbstractEntity {
 	 */
 	protected function initStorageObjects() {
 		$this->categories = new ObjectStorage();
+		$this->contacts = new ObjectStorage();
 		$this->links = new ObjectStorage();
 		$this->backendUserGroups = new ObjectStorage();
 		$this->locations = new ObjectStorage();
@@ -189,7 +198,7 @@ class Person extends AbstractEntity {
 	/**
 	 * Returns the priority
 	 *
-	 * @return int $priority
+	 * @return \JWeiland\Hfwupersonal\Domain\Model\Priority $priority
 	 */
 	public function getPriority() {
 		return $this->priority;
@@ -198,7 +207,7 @@ class Person extends AbstractEntity {
 	/**
 	 * Sets the priority
 	 *
-	 * @param int $priority
+	 * @param \JWeiland\Hfwupersonal\Domain\Model\Priority $priority
 	 * @return void
 	 */
 	public function setPriority($priority) {
@@ -340,6 +349,45 @@ class Person extends AbstractEntity {
 	}
 
 	/**
+	 * Adds a Contact
+	 *
+	 * @param \JWeiland\Hfwupersonal\Domain\Model\Contact $contact
+	 * @return void
+	 */
+	public function addContact(\JWeiland\Hfwupersonal\Domain\Model\Contact $contact) {
+		$this->contacts->attach($contact);
+	}
+
+	/**
+	 * Removes a Contact
+	 *
+	 * @param \JWeiland\Hfwupersonal\Domain\Model\Contact $contact
+	 * @return void
+	 */
+	public function removeContact(\JWeiland\Hfwupersonal\Domain\Model\Contact $contact) {
+		$this->contacts->detach($contact);
+	}
+
+	/**
+	 * Returns the contacts
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $contacts
+	 */
+	public function getContacts() {
+		return $this->contacts;
+	}
+
+	/**
+	 * Sets the contacts
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $contacts
+	 * @return void
+	 */
+	public function setContacts(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $contacts) {
+		$this->contacts = $contacts;
+	}
+
+	/**
 	 * Adds a Link
 	 *
 	 * @param \JWeiland\Hfwupersonal\Domain\Model\Link $link
@@ -352,11 +400,11 @@ class Person extends AbstractEntity {
 	/**
 	 * Removes a Link
 	 *
-	 * @param \JWeiland\Hfwupersonal\Domain\Model\Link $linkToRemove The Link to be removed
+	 * @param \JWeiland\Hfwupersonal\Domain\Model\Link $link
 	 * @return void
 	 */
-	public function removeLink(\JWeiland\Hfwupersonal\Domain\Model\Link $linkToRemove) {
-		$this->links->detach($linkToRemove);
+	public function removeLink(\JWeiland\Hfwupersonal\Domain\Model\Link $link) {
+		$this->links->detach($link);
 	}
 
 	/**
