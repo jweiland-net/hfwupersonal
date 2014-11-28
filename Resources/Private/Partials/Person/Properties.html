@@ -4,54 +4,57 @@
 	<h2><f:translate key="tx_hfwupersonal_domain_model_address" /></h2>
 	<f:render partial="Person/AddressProperties" arguments="{person: person}" />
 
-	<h2><f:translate key="tx_hfwupersonal_domain_model_location" /></h2>
+	<f:if condition="{person.locations}">
+		<h2><f:translate key="tx_hfwupersonal_domain_model_location" /></h2>
+		<dl>
+			<dt>&nbsp;</dt>
+			<dd>
+				<ul>
+					<f:for each="{person.locations}" as="location">
+						<li><strong>{location.title}:</strong> {location.room.number}</li>
+					</f:for>
+				</ul>
+			</dd>
+		</dl>
+	</f:if>
 
-	<dl>
-		<dt>&nbsp;</dt>
-		<dd>
-			<ul>
-				<f:for each="{person.locations}" as="location">
-					<li><strong>{location.title}:</strong> {location.room.number}</li>
-				</f:for>
-			</ul>
-		</dd>
-	</dl>
-
-	<h2><f:translate key="tx_hfwupersonal_domain_model_position" /></h2>
-
-	<dl>
-		<dt>&nbsp;</dt>
-		<dd>
-			<ul>
-				<f:for each="{person.positions}" as="position">
-					<li>
-						<strong>{position.title}</strong><br />
-						{position.telephone}<br />
-						{position.fax}<br />
-						{position.responseTimes}
-					</li>
-				</f:for>
-			</ul>
-		</dd>
-	</dl>
-
-	<h2><f:translate key="tx_hfwupersonal_domain_model_activity" /></h2>
-
-	<dl>
-		<dt>&nbsp;</dt>
-		<dd>
-			<ul>
-				<f:for each="{person.activities}" as="activity">
-					<li>
-						{activity.faculty}<br />
-						{activity.courseOfStudies}<br />
-						{activity.research}<br />
-						{activity.employment}<br />
-						{activity.specialField}<br />
-					</li>
-				</f:for>
-			</ul>
-		</dd>
-	</dl>
+	<f:if condition="person.positions">
+		<h2><f:translate key="tx_hfwupersonal_domain_model_position" /></h2>
+		<dl>
+			<dt>&nbsp;</dt>
+			<dd>
+				<ul>
+					<f:for each="{person.positions}" as="position">
+						<li>
+							<strong>{position.title}</strong><br />
+							{position.telephone}<br />
+							{position.fax}<br />
+							{position.responseTimes}
+						</li>
+					</f:for>
+				</ul>
+			</dd>
+		</dl>
+	</f:if>
+	
+	<f:if condition="{person.activities}">
+		<h2><f:translate key="tx_hfwupersonal_domain_model_activity" /></h2>
+		<dl>
+			<dt>&nbsp;</dt>
+			<dd>
+				<ul>
+					<f:for each="{person.activities}" as="activity">
+						<li>
+							{activity.faculty}<br />
+							{activity.courseOfStudies}<br />
+							{activity.research}<br />
+							{activity.employment}<br />
+							{activity.specialField}<br />
+						</li>
+					</f:for>
+				</ul>
+			</dd>
+		</dl>
+	</f:if>
 
 </div>
