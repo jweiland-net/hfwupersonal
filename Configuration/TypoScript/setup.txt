@@ -10,6 +10,13 @@ plugin.tx_hfwupersonal {
 	}
 	persistence {
 		storagePid = {$plugin.tx_hfwupersonal.persistence.storagePid}
+		classes {
+			JWeiland\Hfwupersonal\Domain\Model\BackendUserGroup {
+				mapping {
+					tableName = be_groups
+				}
+			}
+		}
 	}
 	features {
 		# uncomment the following line to enable the new Property Mapper.

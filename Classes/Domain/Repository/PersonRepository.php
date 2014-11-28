@@ -64,4 +64,20 @@ class PersonRepository extends Repository {
 		}
 	}
 
+	/**
+	 * find by search
+	 *
+	 * @param string $search
+	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface|array
+	 */
+	public function findBySearch($search) {
+		$query = $this->createQuery();
+		$constraint = array();
+		// ToDo: add escapeForLike
+		$constraint[] = $query->like('firstName', '%' . $search . '%');
+		$constraint[] = $query->like('lastName', '%' . $search . '%');
+		$constraint[] = $query->like('email', '%' . $search . '%');
+		return $query->matching($query->logicalOr($constraint))->execute();
+	}
+
 }

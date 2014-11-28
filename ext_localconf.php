@@ -7,10 +7,10 @@ if (!defined('TYPO3_MODE')) {
 	'JWeiland.' . $_EXTKEY,
 	'Personal',
 	array(
-		'Person' => 'list, show',
+		'Person' => 'list, show, search',
 	),
 	// non-cacheable actions
 	array(
-		'Person' => '',
+		'Person' => 'search',
 	)
 );

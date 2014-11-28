@@ -78,8 +78,8 @@
 				<source>Frontend Usergroup</source>
 				<target>Frontend Benutzergruppe</target>
 			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_person.backend_user_group">
-				<source>Backend Usergroup</source>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.backend_user_groups">
+				<source>Backend Usergroups</source>
 				<target>Backend Benutzergruppen</target>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.address">

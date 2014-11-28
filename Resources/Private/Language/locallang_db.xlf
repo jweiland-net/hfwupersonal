@@ -60,8 +60,8 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_person.frontend_user_group">
 				<source>Frontend Usergroup</source>
 			</trans-unit>
-			<trans-unit id="tx_hfwupersonal_domain_model_person.backend_user_group">
-				<source>Backend Usergroup</source>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.backend_user_groups">
+				<source>Backend Usergroups</source>
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.address">
 				<source>Address</source>

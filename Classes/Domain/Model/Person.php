@@ -115,7 +115,7 @@ class Person extends AbstractEntity {
 	/**
 	 * BackendUserGroups
 	 *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Hfwupersonal\Domain\Model\BackendUserGroup>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\BackendUserGroup>
 	 */
 	protected $backendUserGroups = NULL;
 

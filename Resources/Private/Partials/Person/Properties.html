@@ -1,67 +1,8 @@
 <div class="tx-hfwupersonal">
-	<dl>
-		<dt><f:translate key="tx_hfwupersonal_domain_model_person.title" /></dt>
-		<dd>{person.title}</dd>
-	</dl>
-	<dl>
-		<dt><f:translate key="tx_hfwupersonal_domain_model_person.first_name" /></dt>
-		<dd>{person.firstName}</dd>
-	</dl>
-	<dl>
-		<dt><f:translate key="tx_hfwupersonal_domain_model_person.last_name" /></dt>
-		<dd>{person.lastName}</dd>
-	</dl>
-	<dl>
-		<dt><f:translate key="tx_hfwupersonal_domain_model_person.email" /></dt>
-		<dd><f:link.email email="{person.email}">E-Mail</f:link.email></dd>
-	</dl>
-	<dl>
-		<dt><f:translate key="tx_hfwupersonal_domain_model_person.image" /></dt>
-		<dd>{person.image}</dd>
-	</dl>
-	<dl>
-		<dt><f:translate key="tx_hfwupersonal_domain_model_person.image_comment" /></dt>
-		<dd>{person.imageComment}</dd>
-	</dl>
-	<dl>
-		<dt><f:translate key="tx_hfwupersonal_domain_model_person.links" /></dt>
-		<dd>
-			<ul>
-				<f:for each="{person.links}" as="link">
-					<li><f:link.external target="_blank" uri="{link.link}">{link.title}</f:link.external></li>
-				</f:for>
-			</ul>
-		</dd>
-	</dl>
-	<dl>
-		<dt><f:translate key="tx_hfwupersonal_domain_model_person.frontend_user_group" /></dt>
-		<dd>{person.frontendUserGroup.title}</dd>
-	</dl>
-	<dl>
-		<dt><f:translate key="tx_hfwupersonal_domain_model_person.backend_user_groups" /></dt>
-		<dd>
-			<ul>
-				<f:for each="{person.backendUserGroups}" as="backendUserGroup">
-					<li>{backendUserGroup.title}</li>
-				</f:for>
-			</ul>
-		</dd>
-	</dl>
+	<f:render partial="Person/PersonProperties" arguments="{person: person}" />
 
 	<h2><f:translate key="tx_hfwupersonal_domain_model_address" /></h2>
-
-	<dl>
-		<dt><f:translate key="tx_hfwupersonal_domain_model_address.address" /></dt>
-		<dd>{person.address.address}</dd>
-	</dl>
-	<dl>
-		<dt><f:translate key="tx_hfwupersonal_domain_model_address.zip" /></dt>
-		<dd>{person.address.zip}</dd>
-	</dl>
-	<dl>
-		<dt><f:translate key="tx_hfwupersonal_domain_model_address.city" /></dt>
-		<dd>{person.address.city}</dd>
-	</dl>
+	<f:render partial="Person/AddressProperties" arguments="{person: person}" />
 
 	<h2><f:translate key="tx_hfwupersonal_domain_model_location" /></h2>
 

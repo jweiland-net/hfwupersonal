@@ -1,0 +1,33 @@
+<f:if condition="{person.locations}">
+	<f:then>
+		<f:for each="{person.locations}" as="location">
+			<p>Person -> Location: {location.title} -> Room: {location.room.number} -> Building: {location.room.building.title} -> Address</p>
+			<f:render section="Address" arguments="{address: location.room.building.address}" />
+		</f:for>
+	</f:then>
+	<f:else>
+		<p>Person -> Address (Fallback)</p>
+		<f:render section="Address" arguments="{address: person.address}" />
+	</f:else>
+</f:if>
+
+<f:section name="Address">
+	<f:if condition="{address.address}">
+		<dl>
+			<dt><f:translate key="tx_hfwupersonal_domain_model_address.address" /></dt>
+			<dd>{address.address}</dd>
+		</dl>
+	</f:if>
+	<f:if condition="{address.zip}">
+		<dl>
+			<dt><f:translate key="tx_hfwupersonal_domain_model_address.zip" /></dt>
+			<dd>{address.zip}</dd>
+		</dl>
+	</f:if>
+	<f:if condition="{address.city}">
+		<dl>
+			<dt><f:translate key="tx_hfwupersonal_domain_model_address.city" /></dt>
+			<dd>{address.city}</dd>
+		</dl>
+	</f:if>
+</f:section>

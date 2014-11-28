@@ -23,10 +23,10 @@ return array(
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('hfwupersonal') . 'Resources/Public/Icons/tx_hfwupersonal_domain_model_person.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, priority, first_name, last_name, email, image, image_comment, category, contacts, links, frontend_user_group, backend_user_group, address, locations, positions, activities',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, priority, first_name, last_name, email, image, image_comment, category, contacts, links, frontend_user_group, backend_user_groups, address, locations, positions, activities',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, priority, first_name, last_name, email, image, image_comment, category, contacts, links, frontend_user_group, backend_user_group, address, locations, positions, activities, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, priority, first_name, last_name, email, image, image_comment, category, contacts, links, frontend_user_group, backend_user_groups, address, locations, positions, activities, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -221,13 +221,14 @@ return array(
 				'maxitems' => 1,
 			),
 		),
-		'backend_user_group' => array(
+		'backend_user_groups' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.backend_user_group',
+			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.backend_user_groups',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'be_groups',
 				'foreign_table_where' => 'ORDER BY be_groups.title ASC',
+				'MM' => 'tx_hfwupersonal_person_begroups_mm',
 				'size' => 5,
 				'minitems' => 0,
 				'maxitems' => 99,

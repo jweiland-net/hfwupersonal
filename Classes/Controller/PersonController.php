@@ -51,6 +51,7 @@ class PersonController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 		} else {
 			$persons = $this->personRepository->findAll();
 		}
+		$this->view->assign('pageUid', $GLOBALS['TSFE']->id);
 		$this->view->assign('persons', $persons);
 	}
 
@@ -62,6 +63,29 @@ class PersonController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 */
 	public function showAction(\JWeiland\Hfwupersonal\Domain\Model\Person $person) {
 		$this->view->assign('person', $person);
+	}
+
+	public function initializeSearchAction() {
+		if ($this->request->hasArgument('search')) {
+			$this->request->setArgument('search', trim(htmlspecialchars(strip_tags($this->request->getArgument('search')))));
+		}
+	}
+
+	/**
+	 * action search
+	 *
+	 * @param string $search
+	 * @return void
+	 */
+	public function searchAction($search) {
+		if (empty($search)) {
+			$persons = $this->personRepository->findAll();
+		} else {
+			$persons = $this->personRepository->findBySearch($search);
+		}
+		$this->view->assign('pageUid', $GLOBALS['TSFE']->id);
+		$this->view->assign('search', $search);
+		$this->view->assign('persons', $persons);
 	}
 
 }

@@ -1,0 +1,41 @@
+<f:render partial="Person/Property" arguments="{property: person.title, languageKey: 'title'}" />
+<f:render partial="Person/Property" arguments="{property: person.firstName, languageKey: 'first_name'}" />
+<f:render partial="Person/Property" arguments="{property: person.lastName, languageKey: 'last_name'}" />
+<f:if condition="{person.email}">
+	<dl>
+		<dt><f:translate key="tx_hfwupersonal_domain_model_person.email" /></dt>
+		<dd><f:link.email email="{person.email}">E-Mail</f:link.email></dd>
+	</dl>
+</f:if>
+<f:if condition="{person.image}">
+	<dl>
+		<dt><f:translate key="tx_hfwupersonal_domain_model_person.image" /></dt>
+		<dd>{person.image}</dd>
+	</dl>
+</f:if>
+<f:render partial="Person/Property" arguments="{property: person.imageComment, languageKey: 'image_comment'}" />
+<f:if condition="{person.links}">
+	<dl>
+		<dt><f:translate key="tx_hfwupersonal_domain_model_person.links" /></dt>
+		<dd>
+			<ul>
+				<f:for each="{person.links}" as="link">
+					<li><f:link.external target="_blank" uri="{link.link}">{link.title}</f:link.external></li>
+				</f:for>
+			</ul>
+		</dd>
+	</dl>
+</f:if>
+<f:render partial="Person/Property" arguments="{property: person.frontendUserGroup.title, languageKey: 'frontend_user_group'}" />
+<f:if condition="{person.backendUserGroups}">
+	<dl>
+		<dt><f:translate key="tx_hfwupersonal_domain_model_person.backend_user_groups" /></dt>
+		<dd>
+			<ul>
+				<f:for each="{person.backendUserGroups}" as="backendUserGroup">
+					<li>{backendUserGroup.title}</li>
+				</f:for>
+			</ul>
+		</dd>
+	</dl>
+</f:if>
