@@ -18,7 +18,7 @@
 		</dl>
 	</f:if>
 
-	<f:if condition="person.positions">
+	<f:if condition="{person.positions}">
 		<h2><f:translate key="tx_hfwupersonal_domain_model_position" /></h2>
 		<dl>
 			<dt>&nbsp;</dt>
@@ -36,7 +36,7 @@
 			</dd>
 		</dl>
 	</f:if>
-	
+
 	<f:if condition="{person.activities}">
 		<h2><f:translate key="tx_hfwupersonal_domain_model_activity" /></h2>
 		<dl>
