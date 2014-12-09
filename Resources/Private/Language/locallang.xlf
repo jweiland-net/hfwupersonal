@@ -45,6 +45,9 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_person.email">
 				<source>Email</source>
 			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.stud_ip">
+				<source>StudIP</source>
+			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.image">
 				<source>Image</source>
 			</trans-unit>

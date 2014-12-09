@@ -19,7 +19,7 @@
 			<th><f:translate key="tx_hfwupersonal_domain_model_person.email" /></th>
 		</tr>
 
-		<f:widget.paginate objects="{persons}" as="paginatedPersons" configuration="{itemsPerPage: 50}">
+		<f:widget.paginate objects="{persons}" as="paginatedPersons" configuration="{itemsPerPage: settings.pageBrowser.itemsPerPage}">
 			<f:for each="{paginatedPersons}" as="person">
 				<tr>
 					<td>{person.title}</td>

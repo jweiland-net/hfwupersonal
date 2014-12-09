@@ -58,6 +58,10 @@
 				<source>Email</source>
 				<target>E-Mail</target>
 			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.stud_ip">
+				<source>StudIP</source>
+				<target>StudIP</target>
+			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.image">
 				<source>Image</source>
 				<target>Bild</target>

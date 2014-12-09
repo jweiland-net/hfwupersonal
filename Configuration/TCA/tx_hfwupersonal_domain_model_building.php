@@ -121,6 +121,7 @@ return array(
 				'MM' => 'tx_hfwupersonal_building_address_mm',
 				'size' => 5,
 				'maxitems' => 1,
+				'minitems' => 1,
 				'wizards' => array(
 					'suggest' => array(
 						'type' => 'suggest',

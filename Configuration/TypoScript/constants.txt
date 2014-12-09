@@ -12,4 +12,8 @@ plugin.tx_hfwupersonal {
 		# cat=plugin.tx_hfwupersonal//a; type=string; label=Default storage PID
 		storagePid =
 	}
+	settings {
+		# cat=plugin.tx_hfwupersonal//b; type=int+; label=Pagebrowser items: Define the amount of items for one page in pagebrowser
+		pageBrowser.itemsPerPage = 50
+	}
 }

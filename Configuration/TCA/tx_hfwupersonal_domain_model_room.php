@@ -123,13 +123,21 @@ return array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_room.building',
 			'config' => array(
-				'type' => 'select',
+				'type' => 'group',
+				'internal_type' => 'db',
+				'allowed' => 'tx_hfwupersonal_domain_model_building',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_building',
-				'items' => array(
-					array('', 0)
-				),
-				'minitems' => 0,
+				'minitems' => 1,
 				'maxitems' => 1,
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+						'default' => array(
+							'minimumCharacters' => 3,
+							'searchWholePhrase' => TRUE
+						)
+					)
+				)
 			),
 		),
 	),

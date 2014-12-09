@@ -18,9 +18,8 @@ plugin.tx_hfwupersonal {
 			}
 		}
 	}
-	features {
-		# uncomment the following line to enable the new Property Mapper.
-		# rewrittenPropertyMapper = 1
+	settings {
+		pageBrowser.itemsPerPage = {$plugin.tx_hfwupersonal.settings.pageBrowser.itemsPerPage}
 	}
 }
 

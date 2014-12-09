@@ -23,10 +23,10 @@ return array(
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('hfwupersonal') . 'Resources/Public/Icons/tx_hfwupersonal_domain_model_person.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, priority, first_name, last_name, email, image, image_comment, category, contacts, links, frontend_user_group, backend_user_groups, address, locations, positions, activities',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, priority, first_name, last_name, email, stud_ip, image, image_comment, category, contacts, links, frontend_user_group, backend_user_groups, address, locations, positions, activities',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, priority, first_name, last_name, email, image, image_comment, category, contacts, links, frontend_user_group, backend_user_groups, address, locations, positions, activities, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, priority, first_name, last_name, email, stud_ip, image, image_comment, category, contacts, links, frontend_user_group, backend_user_groups, address, locations, positions, activities, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -148,6 +148,15 @@ return array(
 		'email' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.email',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
+		),
+		'stud_ip' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.stud_ip',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,

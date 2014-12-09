@@ -14,3 +14,6 @@ if (!defined('TYPO3_MODE')) {
 		'Person' => 'search',
 	)
 );
+
+// register eID scripts
+$TYPO3_CONF_VARS['FE']['eID_include']['hfwuPersonalSearchPersons'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('hfwupersonal') . 'Classes/Ajax/SearchPersons.php';

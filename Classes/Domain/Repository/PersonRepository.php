@@ -77,6 +77,7 @@ class PersonRepository extends Repository {
 		$constraint[] = $query->like('firstName', '%' . $search . '%');
 		$constraint[] = $query->like('lastName', '%' . $search . '%');
 		$constraint[] = $query->like('email', '%' . $search . '%');
+		$constraint[] = $query->like('positions.title', '%' . $search . '%');
 		return $query->matching($query->logicalOr($constraint))->execute();
 	}
 

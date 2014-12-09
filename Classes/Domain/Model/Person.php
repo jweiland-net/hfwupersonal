@@ -69,6 +69,13 @@ class Person extends AbstractEntity {
 	protected $email = '';
 
 	/**
+	 * studIp
+	 *
+	 * @var string
+	 */
+	protected $studIp = '';
+
+	/**
 	 * image
 	 *
 	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
@@ -269,6 +276,25 @@ class Person extends AbstractEntity {
 	 */
 	public function setEmail($email) {
 		$this->email = $email;
+	}
+
+	/**
+	 * Returns the studIp
+	 *
+	 * @return string $studIp
+	 */
+	public function getStudIp() {
+		return $this->studIp;
+	}
+
+	/**
+	 * Sets the studIp
+	 *
+	 * @param string $studIp
+	 * @return void
+	 */
+	public function setStudIp($studIp) {
+		$this->studIp = $studIp;
 	}
 
 	/**
