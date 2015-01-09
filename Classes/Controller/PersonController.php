@@ -1,7 +1,6 @@
 <?php
 namespace JWeiland\Hfwupersonal\Controller;
 
-
 /***************************************************************
  *
  *  Copyright notice
@@ -26,19 +25,39 @@ namespace JWeiland\Hfwupersonal\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * PersonController
  */
-class PersonController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class PersonController extends ActionController {
 
 	/**
 	 * personRepository
 	 *
 	 * @var \JWeiland\Hfwupersonal\Domain\Repository\PersonRepository
-	 * @inject
 	 */
 	protected $personRepository = NULL;
+
+	/**
+	 * inject personRepository
+	 *
+	 * @param \JWeiland\Hfwupersonal\Domain\Repository\PersonRepository $personRepository
+	 * @return void
+	 */
+	public function injectPersonRepository(\JWeiland\Hfwupersonal\Domain\Repository\PersonRepository $personRepository) {
+		$this->personRepository = $personRepository;
+	}
+
+	/**
+	 * add some variables to fluid template
+	 *
+	 * @return void
+	 */
+	public function initializeView() {
+		$this->view->assign('siteUrl', GeneralUtility::getIndpEnv('TYPO3_SITE_URL'));
+	}
 
 	/**
 	 * action list

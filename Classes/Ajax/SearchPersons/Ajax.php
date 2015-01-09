@@ -83,24 +83,24 @@ class Ajax extends AbstractAjaxRequest {
 	 */
 	protected function findPersons($search) {
 		if (strlen($search) > 0 && strlen($search) <= 2) {
+			// we only search for last_name's which begin with $search
 			$persons = $this->databaseConnection->exec_SELECTgetRows(
-				'uid, first_name, last_name',
+				'last_name as value',
 				'tx_hfwupersonal_domain_model_person',
-				'first_name LIKE "' . $this->databaseConnection->escapeStrForLike($search, 'tx_hfwupersonal_domain_model_person') . '%"' .
-				' OR last_name LIKE "' . $this->databaseConnection->escapeStrForLike($search, 'tx_hfwupersonal_domain_model_person') . '%"' .
+				'last_name LIKE "' . $this->databaseConnection->escapeStrForLike($search, 'tx_hfwupersonal_domain_model_person') . '%"' .
 				BackendUtility::BEenableFields('tx_hfwupersonal_domain_model_person') .
 				BackendUtility::deleteClause('tx_hfwupersonal_domain_model_person'),
-				'', 'last_name, first_name', ''
+				'', 'last_name', ''
 			);
 		} elseif (strlen($search) > 2) {
 			$persons = $this->databaseConnection->exec_SELECTgetRows(
-				'uid, first_name, last_name',
+				'last_name as value',
 				'tx_hfwupersonal_domain_model_person',
 				'first_name LIKE "%' . $this->databaseConnection->escapeStrForLike($search, 'tx_hfwupersonal_domain_model_person') . '%"' .
 				' OR last_name LIKE "%' . $this->databaseConnection->escapeStrForLike($search, 'tx_hfwupersonal_domain_model_person') . '%"' .
 				BackendUtility::BEenableFields('tx_hfwupersonal_domain_model_person') .
 				BackendUtility::deleteClause('tx_hfwupersonal_domain_model_person'),
-				'', 'last_name, first_name', ''
+				'', 'last_name', ''
 			);
 		} else {
 			$persons = array();

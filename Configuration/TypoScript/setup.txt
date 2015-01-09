@@ -1,5 +1,14 @@
 page.includeCSS {
 	hwfuMain = EXT:hfwupersonal/Resources/Public/Css/Main.css
+	jQueryUi = //ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css
+	jQueryUi.external = 1
+}
+page.includeJSlibs {
+	jQuery = //ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js
+	jQuery.external = 1
+	jQueryUi = //ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js
+	jQueryUi.external = 1
+	hfwu = EXT:hfwupersonal/Resources/Public/JavaScript/Main.js
 }
 
 plugin.tx_hfwupersonal {

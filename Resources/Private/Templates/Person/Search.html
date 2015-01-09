@@ -3,11 +3,13 @@
 <f:section name="main">
 	<h1><f:translate key="headerForListView" /></h1>
 
+	<f:render partial="JavaScript" arguments="{siteUrl: siteUrl}" />
+
 	<form action="{f:uri.action(action: 'search')}" method="get">
 		<input type="hidden" name="id" value="{pageUid}" /><br />
 		<input type="hidden" name="tx_hfwupersonal_personal[controller]" value="Person" /><br />
 		<input type="hidden" name="tx_hfwupersonal_personal[action]" value="search" /><br />
-		<input type="text" name="tx_hfwupersonal_personal[search]" value="{search}" /><br />
+		<input type="text" id="search" name="tx_hfwupersonal_personal[search]" value="{search}" /><br />
 		<input type="submit" value="Search" />
 	</form>
 

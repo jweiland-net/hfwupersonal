@@ -18,6 +18,25 @@
 		</dl>
 	</f:if>
 
+	<f:if condition="{person.contacts}">
+		<h2><f:translate key="tx_hfwupersonal_domain_model_contact" /></h2>
+		<dl>
+			<dt>&nbsp;</dt>
+			<dd>
+				<ul>
+					<f:for each="{person.contacts}" as="contact">
+						<li>
+							<strong><f:translate key="tx_hfwupersonal_domain_model_contact.type.{contact.type}" /></strong> {contact.contact}<br />
+							<f:if condition="{contact.room}">
+								<f:translate key="tx_hfwupersonal_domain_model_contact.room" />: {contact.room}<br />
+							</f:if>
+						</li>
+					</f:for>
+				</ul>
+			</dd>
+		</dl>
+	</f:if>
+
 	<f:if condition="{person.positions}">
 		<h2><f:translate key="tx_hfwupersonal_domain_model_position" /></h2>
 		<dl>
@@ -27,8 +46,6 @@
 					<f:for each="{person.positions}" as="position">
 						<li>
 							<strong>{position.title}</strong><br />
-							{position.telephone}<br />
-							{position.fax}<br />
 							{position.responseTimes}
 						</li>
 					</f:for>
