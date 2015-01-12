@@ -26,7 +26,7 @@
 				<ul>
 					<f:for each="{person.contacts}" as="contact">
 						<li>
-							<strong><f:translate key="tx_hfwupersonal_domain_model_contact.type.{contact.type}" /></strong> {contact.contact}<br />
+							<strong><f:translate key="tx_hfwupersonal_domain_model_contact.type.{contact.type}" /></strong> <a href="tel:{contact.contact}" target="_blank">{contact.contact}</a><br />
 							<f:if condition="{contact.room}">
 								<f:translate key="tx_hfwupersonal_domain_model_contact.room" />: {contact.room}<br />
 							</f:if>
