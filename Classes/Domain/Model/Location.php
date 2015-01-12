@@ -26,11 +26,12 @@ namespace JWeiland\Hfwupersonal\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
  * Locations
  */
-class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Location extends AbstractEntity {
 
 	/**
 	 * title

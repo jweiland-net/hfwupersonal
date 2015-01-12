@@ -6,72 +6,47 @@
 
 	<f:if condition="{person.locations}">
 		<h2><f:translate key="tx_hfwupersonal_domain_model_location" /></h2>
-		<dl>
-			<dt>&nbsp;</dt>
-			<dd>
-				<ul>
-					<f:for each="{person.locations}" as="location">
-						<li><strong>{location.title}:</strong> {location.room.number}</li>
-					</f:for>
-				</ul>
-			</dd>
-		</dl>
-	</f:if>
-
-	<f:if condition="{person.contacts}">
-		<h2><f:translate key="tx_hfwupersonal_domain_model_contact" /></h2>
-		<dl>
-			<dt>&nbsp;</dt>
-			<dd>
-				<ul>
-					<f:for each="{person.contacts}" as="contact">
-						<li>
-							<strong><f:translate key="tx_hfwupersonal_domain_model_contact.type.{contact.type}" /></strong> <a href="tel:{contact.contact}" target="_blank">{contact.contact}</a><br />
-							<f:if condition="{contact.room}">
-								<f:translate key="tx_hfwupersonal_domain_model_contact.room" />: {contact.room}<br />
-							</f:if>
-						</li>
-					</f:for>
-				</ul>
-			</dd>
-		</dl>
+		<f:for each="{person.locations}" as="location">
+			<h3>{location.title}</h3>
+			<h4><f:translate key="tx_hfwupersonal_domain_model_room" /></h4>
+			<f:translate key="tx_hfwupersonal_domain_model_room.number" />: {location.room.number}<br />
+			<f:translate key="tx_hfwupersonal_domain_model_room.floor" />: {location.room.floor}<br />
+			<f:if condition="{person.contacts}">
+				<f:for each="{person.contacts}" as="contact">
+					<f:if condition="{contact.room}=={location.room}">
+						<h4><f:translate key="tx_hfwupersonal_domain_model_contact" /></h4>
+						<f:translate key="tx_hfwupersonal_domain_model_contact.type.{contact.type}" /> <a href="tel:{contact.contact}" target="_blank">{contact.contact}</a>
+					</f:if>
+				</f:for>
+			</f:if>
+		</f:for>
 	</f:if>
 
 	<f:if condition="{person.positions}">
 		<h2><f:translate key="tx_hfwupersonal_domain_model_position" /></h2>
-		<dl>
-			<dt>&nbsp;</dt>
-			<dd>
-				<ul>
-					<f:for each="{person.positions}" as="position">
-						<li>
-							<strong>{position.title}</strong><br />
-							{position.responseTimes}
-						</li>
-					</f:for>
-				</ul>
-			</dd>
-		</dl>
+		<ul>
+			<f:for each="{person.positions}" as="position">
+				<li>
+					<strong>{position.title}</strong><br />
+					{position.responseTimes}
+				</li>
+			</f:for>
+		</ul>
 	</f:if>
 
 	<f:if condition="{person.activities}">
 		<h2><f:translate key="tx_hfwupersonal_domain_model_activity" /></h2>
-		<dl>
-			<dt>&nbsp;</dt>
-			<dd>
-				<ul>
-					<f:for each="{person.activities}" as="activity">
-						<li>
-							{activity.faculty}<br />
-							{activity.courseOfStudies}<br />
-							{activity.research}<br />
-							{activity.employment}<br />
-							{activity.specialField}<br />
-						</li>
-					</f:for>
-				</ul>
-			</dd>
-		</dl>
+		<ul>
+			<f:for each="{person.activities}" as="activity">
+				<li>
+					{activity.faculty}<br />
+					{activity.courseOfStudies}<br />
+					{activity.research}<br />
+					{activity.employment}<br />
+					{activity.specialField}<br />
+				</li>
+			</f:for>
+		</ul>
 	</f:if>
 
 </div>
