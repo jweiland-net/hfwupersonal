@@ -47,6 +47,14 @@ class Building extends AbstractEntity {
 	protected $address = NULL;
 
 	/**
+	 * Links
+	 *
+	 * @var \JWeiland\Hfwupersonal\Domain\Model\Link
+	 * @cascade remove
+	 */
+	protected $link = NULL;
+
+	/**
 	 * Returns the title
 	 *
 	 * @return string $title
@@ -82,6 +90,25 @@ class Building extends AbstractEntity {
 	 */
 	public function setAddress(\JWeiland\Hfwupersonal\Domain\Model\Address $address) {
 		$this->address = $address;
+	}
+
+	/**
+	 * Returns the link
+	 *
+	 * @return \JWeiland\Hfwupersonal\Domain\Model\Link $link
+	 */
+	public function getLink() {
+		return $this->link;
+	}
+
+	/**
+	 * Sets the link
+	 *
+	 * @param \JWeiland\Hfwupersonal\Domain\Model\Link $link
+	 * @return void
+	 */
+	public function setLink(\JWeiland\Hfwupersonal\Domain\Model\Link $link) {
+		$this->link = $link;
 	}
 
 }

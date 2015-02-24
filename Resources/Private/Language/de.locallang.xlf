@@ -74,6 +74,10 @@
 				<source>Contacts</source>
 				<target>Kontakte</target>
 			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_person.profile_page">
+				<source>Profile page</source>
+				<target>Profilseite</target>
+			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_person.links">
 				<source>Links</source>
 				<target>Links</target>
@@ -200,6 +204,10 @@
 				<source>Address</source>
 				<target>Adresse</target>
 			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_building.link">
+				<source>Link</source>
+				<target>Link</target>
+			</trans-unit>
 
 			<trans-unit id="tx_hfwupersonal_domain_model_room">
 				<source>Room</source>
@@ -229,6 +237,10 @@
 			<trans-unit id="backToList">
 				<source>Back to list</source>
 				<target>Zurück zur Listenansicht</target>
+			</trans-unit>
+			<trans-unit id="noResults">
+				<source>No Results</source>
+				<target>Es wurden keine Ergebnisse gefunden</target>
 			</trans-unit>
 
 		</body>

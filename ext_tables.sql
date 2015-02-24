@@ -71,6 +71,7 @@ CREATE TABLE tx_hfwupersonal_domain_model_person (
 	image varchar(255) DEFAULT '' NOT NULL,
 	image_comment varchar(255) DEFAULT '' NOT NULL,
 	contacts int(11) unsigned DEFAULT '0' NOT NULL,
+	profile_page int(11) unsigned DEFAULT '0' NOT NULL,
 	links int(11) unsigned DEFAULT '0' NOT NULL,
 	frontend_user_group int(11) unsigned DEFAULT '0',
 	backend_user_groups int(11) unsigned DEFAULT '0',
@@ -250,6 +251,7 @@ CREATE TABLE tx_hfwupersonal_domain_model_building (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	address int(11) unsigned DEFAULT '0',
+	link int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

@@ -2,12 +2,15 @@ page.includeCSS {
 	hwfuMain = EXT:hfwupersonal/Resources/Public/Css/Main.css
 	jQueryUi = //ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css
 	jQueryUi.external = 1
+	jQueryUi.if.isTrue = {$plugin.tx_hfwupersonal.settings.includeJQueryCss}
 }
 page.includeJSlibs {
 	jQuery = //ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js
 	jQuery.external = 1
+	jQuery.if.isTrue = {$plugin.tx_hfwupersonal.settings.includeJQueryCore}
 	jQueryUi = //ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js
 	jQueryUi.external = 1
+	jQueryUi.if.isTrue = {$plugin.tx_hfwupersonal.settings.includeJQueryUi}
 	hfwu = EXT:hfwupersonal/Resources/Public/JavaScript/Main.js
 }
 
@@ -28,6 +31,7 @@ plugin.tx_hfwupersonal {
 		}
 	}
 	settings {
+		pidOfDetailPage = {$plugin.tx_hfwupersonal.settings.pidOfDetailPage}
 		pageBrowser.itemsPerPage = {$plugin.tx_hfwupersonal.settings.pageBrowser.itemsPerPage}
 	}
 }

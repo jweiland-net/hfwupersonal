@@ -13,7 +13,15 @@ plugin.tx_hfwupersonal {
 		storagePid =
 	}
 	settings {
-		# cat=plugin.tx_hfwupersonal//b; type=int+; label=Pagebrowser items: Define the amount of items for one page in pagebrowser
+		# cat=plugin.tx_hfwupersonal/enable/b; type=boolean; label=Include jQuery UI CSS.
+		includeJQueryCss = 1
+		# cat=plugin.tx_hfwupersonal/enable/c; type=boolean; label=Include jQuery Core.
+		includeJQueryCore = 1
+		# cat=plugin.tx_hfwupersonal/enable/d; type=boolean; label=Include jQuery UI.
+		includeJQueryUi = 1
+		# cat=plugin.tx_hfwupersonal//e; type=int+; label=PID of Detail page: Leave empty to show details on current page.
+    pidOfDetailPage =
+		# cat=plugin.tx_hfwupersonal/dims/f; type=int+; label=Pagebrowser items: Define the amount of items for one page in pagebrowser
 		pageBrowser.itemsPerPage = 50
 	}
 }

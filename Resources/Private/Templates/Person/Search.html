@@ -14,23 +14,30 @@
 		<input type="submit" value="Search" />
 	</form>
 
-	<table class="tx_hfwupersonal" >
-		<tr>
-			<th><f:translate key="tx_hfwupersonal_domain_model_person.title" /></th>
-			<th><f:translate key="tx_hfwupersonal_domain_model_person.first_name" /></th>
-			<th><f:translate key="tx_hfwupersonal_domain_model_person.last_name" /></th>
-			<th><f:translate key="tx_hfwupersonal_domain_model_person.email" /></th>
-		</tr>
-
-		<f:widget.paginate objects="{persons}" as="paginatedPersons" configuration="{itemsPerPage: 50}">
-			<f:for each="{paginatedPersons}" as="person">
+	<f:if condition="{persons}">
+		<f:then>
+			<table class="tx_hfwupersonal">
 				<tr>
-					<td>{person.title}</td>
-					<td>{person.firstName}</td>
-					<td><f:link.action action="show" arguments="{person: person}">{person.lastName}</f:link.action></td>
-					<td>{person.email}</td>
+					<th><f:translate key="tx_hfwupersonal_domain_model_person.title" /></th>
+					<th><f:translate key="tx_hfwupersonal_domain_model_person.first_name" /></th>
+					<th><f:translate key="tx_hfwupersonal_domain_model_person.last_name" /></th>
+					<th><f:translate key="tx_hfwupersonal_domain_model_person.email" /></th>
 				</tr>
-			</f:for>
-		</f:widget.paginate>
-	</table>
+
+				<f:widget.paginate objects="{persons}" as="paginatedPersons" configuration="{itemsPerPage: 50}">
+					<f:for each="{paginatedPersons}" as="person">
+						<tr>
+							<td>{person.title}</td>
+							<td>{person.firstName}</td>
+							<td><f:link.action action="show" pageUid="{settings.pidOfDetailPage}" arguments="{person: person}">{person.lastName}</f:link.action></td>
+							<td>{person.email}</td>
+						</tr>
+					</f:for>
+				</f:widget.paginate>
+			</table>
+		</f:then>
+		<f:else>
+			<div><f:translate key="noResults" /></div>
+		</f:else>
+	</f:if>
 </f:section>

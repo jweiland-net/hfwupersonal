@@ -51,6 +51,19 @@ class PersonController extends ActionController {
 	}
 
 	/**
+	 * preprocessing of all actions
+	 *
+	 * @return void
+	 */
+	public function initializeAction() {
+		// if this value was not set, then it will be filled with 0
+		// but that is not good, because UriBuilder accepts 0 as pid, so it's better to set it to NULL
+		if (empty($this->settings['pidOfDetailPage'])) {
+			$this->settings['pidOfDetailPage'] = NULL;
+		}
+	}
+
+	/**
 	 * add some variables to fluid template
 	 *
 	 * @return void

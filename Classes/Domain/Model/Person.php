@@ -105,6 +105,14 @@ class Person extends AbstractEntity {
 	protected $contacts = NULL;
 
 	/**
+	 * Profile page
+	 *
+	 * @var \JWeiland\Hfwupersonal\Domain\Model\Link
+	 * @cascade remove
+	 */
+	protected $profilePage = NULL;
+
+	/**
 	 * Links
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Hfwupersonal\Domain\Model\Link>
@@ -411,6 +419,25 @@ class Person extends AbstractEntity {
 	 */
 	public function setContacts(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $contacts) {
 		$this->contacts = $contacts;
+	}
+
+	/**
+	 * Returns the profilePage
+	 *
+	 * @return \JWeiland\Hfwupersonal\Domain\Model\Link $profilePage
+	 */
+	public function getProfilePage() {
+		return $this->profilePage;
+	}
+
+	/**
+	 * Sets the profilePage
+	 *
+	 * @param \JWeiland\Hfwupersonal\Domain\Model\Link $profilePage
+	 * @return void
+	 */
+	public function setProfilePage(\JWeiland\Hfwupersonal\Domain\Model\Link $profilePage) {
+		$this->profilePage = $profilePage;
 	}
 
 	/**
