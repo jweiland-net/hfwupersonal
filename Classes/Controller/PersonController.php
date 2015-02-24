@@ -78,11 +78,11 @@ class PersonController extends ActionController {
 	 * @return void
 	 */
 	public function listAction() {
-		if (!empty($this->settings['filterByCategories'])) {
-			$persons = $this->personRepository->findByCategories($this->settings['filterByCategories']);
-		} else {
-			$persons = $this->personRepository->findAll();
-		}
+		$persons = $this->personRepository->findByFilters(
+			$this->settings['filterAnd'],
+			$this->settings['filterOr'],
+			$this->settings['filterNot']
+		);
 		$this->view->assign('pageUid', $GLOBALS['TSFE']->id);
 		$this->view->assign('persons', $persons);
 	}
@@ -97,6 +97,13 @@ class PersonController extends ActionController {
 		$this->view->assign('person', $person);
 	}
 
+	/**
+	 * sanitize search string
+	 * remove not allowed parts
+	 *
+	 * @throws \TYPO3\CMS\Extbase\Mvc\Exception\InvalidArgumentNameException
+	 * @throws \TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException
+	 */
 	public function initializeSearchAction() {
 		if ($this->request->hasArgument('search')) {
 			$this->request->setArgument('search', trim(htmlspecialchars(strip_tags($this->request->getArgument('search')))));

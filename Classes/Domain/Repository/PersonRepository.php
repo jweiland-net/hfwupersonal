@@ -26,8 +26,10 @@ namespace JWeiland\Hfwupersonal\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
+use TYPO3\CMS\Extbase\Utility\ArrayUtility;
 
 /**
  * The repository for Persons
@@ -44,24 +46,66 @@ class PersonRepository extends Repository {
 	);
 
 	/**
-	 * filter persons by given categories from FlexForm
+	 * find persons by filter settings (FlexForm)
 	 *
-	 * @param string $categories
+	 * @param string $filterAnd
+	 * @param string $filterOr
+	 * @param string $filterNot
 	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface|array
 	 */
-	public function findByCategories($categories) {
+	public function findByFilters($filterAnd, $filterOr, $filterNot) {
+		if (empty($filterAnd) && empty($filterOr) && empty($filterNot)) {
+			return $this->findAll();
+		}
+
 		$query = $this->createQuery();
-		$categories = GeneralUtility::trimExplode(',', $categories, TRUE);
 		$constraint = array();
-		foreach ($categories as $category) {
-			$constraint[] = $query->contains('categories', $category);
+		$constraintAnd = array();
+		$constraintOr = array();
+		$constraintNot = array();
+
+		// add $filterAnd
+		if (!empty($filterAnd)) {
+			$filterAnd = ArrayUtility::integerExplode(',', $filterAnd);
+			foreach ($filterAnd as $filter) {
+				$constraintAnd[] = $query->contains('categories', $filter);
+			}
 		}
-		if (empty($constraint)) {
-			// ToDo: log this condition, because this will normally not executed
-			return $query->execute();
-		} else {
-			return $query->matching($query->logicalOr($constraint))->execute();
+
+		// add $filterOr
+		if (!empty($filterOr)) {
+			$filterOr = ArrayUtility::integerExplode(',', $filterOr);
+			foreach ($filterOr as $filter) {
+				$constraintOr[] = $query->contains('categories', $filter);
+			}
 		}
+
+		// add $filterNot
+		if (!empty($filterNot)) {
+			$filterNot = ArrayUtility::integerExplode(',', $filterNot);
+			foreach ($filterNot as $filter) {
+				/** @var \TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface $logicalNot */
+				$logicalNot = $query->contains('categories', $filter);
+				$constraintNot[] = $query->logicalNot($logicalNot);
+			}
+		}
+
+		// add AND constraints
+		if (!empty($constraintAnd)) {
+			$constraint[] = $query->logicalAnd($constraintAnd);
+		}
+
+		// add OR constraints
+		if (!empty($constraintOr)) {
+			$constraint[] = $query->logicalOr($constraintOr);
+		}
+
+		// add NOT constraints
+		if (!empty($constraintNot)) {
+			$constraint[] = $query->logicalAnd($constraintNot);
+		}
+
+		return $query->matching($query->logicalAnd($constraint))->execute();
 	}
 
 	/**

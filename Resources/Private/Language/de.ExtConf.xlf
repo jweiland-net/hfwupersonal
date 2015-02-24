@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-02-24T10:24:08Z" product-name="hfwupersonal">
+		<header/>
+		<body>
+
+			<trans-unit id="rootCategoryForFilter">
+				<source>Root category for filters</source>
+				<target>Root Kategorie für Filter</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

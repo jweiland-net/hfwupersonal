@@ -13,6 +13,23 @@
 				<target>Nach Kategorien filtern</target>
 			</trans-unit>
 
+			<trans-unit id="sheetFilter">
+				<source>Filter</source>
+				<target>Filter</target>
+			</trans-unit>
+			<trans-unit id="filterAnd">
+				<source>Filter AND</source>
+				<target>Filter UND</target>
+			</trans-unit>
+			<trans-unit id="filterOr">
+				<source>Filter OR</source>
+				<target>Filter ODER</target>
+			</trans-unit>
+			<trans-unit id="filterNot">
+				<source>Filter NOT</source>
+				<target>Filter NICHT</target>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

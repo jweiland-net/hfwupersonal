@@ -34,5 +34,57 @@
 				</el>
 			</ROOT>
 		</sDEFAULT>
+		<filter>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:hfwupersonal/Resources/Private/Language/FlexForms.xlf:sheetFilter</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.filterAnd>
+						<TCEforms>
+							<label>LLL:EXT:hfwupersonal/Resources/Private/Language/FlexForms.xlf:filterAnd</label>
+							<config>
+								<type>select</type>
+								<foreign_table>sys_category</foreign_table>
+								<foreign_table_where>ORDER BY title ASC</foreign_table_where>
+								<size>15</size>
+								<maxitems>99</maxitems>
+								<minitems>0</minitems>
+								<enableMultiSelectFilterTextfield>1</enableMultiSelectFilterTextfield>
+							</config>
+						</TCEforms>
+					</settings.filterAnd>
+					<settings.filterOr>
+						<TCEforms>
+							<label>LLL:EXT:hfwupersonal/Resources/Private/Language/FlexForms.xlf:filterOr</label>
+							<config>
+								<type>select</type>
+								<foreign_table>sys_category</foreign_table>
+								<foreign_table_where>ORDER BY title ASC</foreign_table_where>
+								<size>15</size>
+								<maxitems>99</maxitems>
+								<minitems>0</minitems>
+								<enableMultiSelectFilterTextfield>1</enableMultiSelectFilterTextfield>
+							</config>
+						</TCEforms>
+					</settings.filterOr>
+					<settings.filterNot>
+						<TCEforms>
+							<label>LLL:EXT:hfwupersonal/Resources/Private/Language/FlexForms.xlf:filterNot</label>
+							<config>
+								<type>select</type>
+								<foreign_table>sys_category</foreign_table>
+								<foreign_table_where>ORDER BY title ASC</foreign_table_where>
+								<size>15</size>
+								<maxitems>99</maxitems>
+								<minitems>0</minitems>
+								<enableMultiSelectFilterTextfield>1</enableMultiSelectFilterTextfield>
+							</config>
+						</TCEforms>
+					</settings.filterNot>
+				</el>
+			</ROOT>
+		</filter>
 	</sheets>
 </T3DataStructure>

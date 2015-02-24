@@ -17,3 +17,8 @@ if (!defined('TYPO3_MODE')) {
 
 // register eID scripts
 $TYPO3_CONF_VARS['FE']['eID_include']['hfwuPersonalSearchPersons'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('hfwupersonal') . 'Classes/Ajax/SearchPersons.php';
+
+if (TYPO3_MODE === 'BE') {
+	// HOOK: Override rootUid in TCA for category trees
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tceforms.php']['getSingleFieldClass'][] = 'JWeiland\\Hfwupersonal\\Hooks\\ModifyTcaOfCategoryTrees';
+}

@@ -11,6 +11,19 @@
 				<source>Filter by categories</source>
 			</trans-unit>
 
+			<trans-unit id="sheetFilter">
+				<source>Filter</source>
+			</trans-unit>
+			<trans-unit id="filterAnd">
+				<source>Filter AND</source>
+			</trans-unit>
+			<trans-unit id="filterOr">
+				<source>Filter OR</source>
+			</trans-unit>
+			<trans-unit id="filterNot">
+				<source>Filter NOT</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>
