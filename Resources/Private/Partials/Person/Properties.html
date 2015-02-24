@@ -11,6 +11,7 @@
 			<h4><f:translate key="tx_hfwupersonal_domain_model_room" /></h4>
 			<f:translate key="tx_hfwupersonal_domain_model_room.number" />: {location.room.number}<br />
 			<f:translate key="tx_hfwupersonal_domain_model_room.floor" />: {location.room.floor}<br />
+			<f:translate key="tx_hfwupersonal_domain_model_room.building" />: {location.room.building}<br />
 			<f:if condition="{person.contacts}">
 				<f:for each="{person.contacts}" as="contact">
 					<f:if condition="{contact.room}=={location.room}">

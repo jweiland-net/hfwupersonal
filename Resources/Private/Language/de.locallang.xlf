@@ -215,7 +215,7 @@
 			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_room.building">
 				<source>Building</source>
-				<target>Einrichtung</target>
+				<target>Gebaude</target>
 			</trans-unit>
 
 			<trans-unit id="headerForListView">
