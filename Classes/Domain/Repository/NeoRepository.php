@@ -35,7 +35,8 @@ class NeoRepository {
 	/**
 	 * @var string
 	 */
-	protected $restApiUrl = 'https://neotowebseite:s8e25o@neotest.hfwu.de/plugins.php/restipplugin/api/getallusers?onlyEmployee=1';
+	//protected $restApiUrl = 'https://neotowebseite:s8e25o@neotest.hfwu.de/plugins.php/restipplugin/api/getallusers?onlyEmployee=1';
+	protected $restApiUrl = 'https://neotowebseite:s8e25o@neotest.hfwu.de/plugins.php/restipplugin/api/getallusers?userslike=beck';
 
 	/**
 	 * @var array

@@ -104,6 +104,9 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_position.title">
 				<source>Title</source>
 			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_position.institute_id">
+				<source>Institute ID</source>
+			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_position.response_times">
 				<source>Office hours</source>
 			</trans-unit>

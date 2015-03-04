@@ -41,6 +41,13 @@ class Position extends AbstractEntity {
 	protected $title = '';
 
 	/**
+	 * instituteId
+	 *
+	 * @var string
+	 */
+	protected $instituteId = '';
+
+	/**
 	 * responseTimes
 	 *
 	 * @var string
@@ -91,6 +98,25 @@ class Position extends AbstractEntity {
 	 */
 	public function setTitle($title) {
 		$this->title = $title;
+	}
+
+	/**
+	 * Returns the instituteId
+	 *
+	 * @return string $instituteId
+	 */
+	public function getInstituteId() {
+		return $this->instituteId;
+	}
+
+	/**
+	 * Sets the instituteId
+	 *
+	 * @param string $instituteId
+	 * @return void
+	 */
+	public function setInstituteId($instituteId) {
+		$this->instituteId = $instituteId;
 	}
 
 	/**

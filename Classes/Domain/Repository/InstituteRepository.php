@@ -35,7 +35,7 @@ class InstituteRepository {
 	/**
 	 * @var string
 	 */
-	protected $restApiUrl = 'https://neotowebseite:s8e25o@neotest.hfwu.de/plugins.php/restipplugin/api/user/###USER###/institutes';
+	protected $restApiUrl = 'https://neotowebseite:s8e25o@neotest.hfwu.de/plugins.php/restipplugin/api/user/|/institutes';
 
 	/**
 	 * Contains all institutes
@@ -43,13 +43,6 @@ class InstituteRepository {
 	 * @var array
 	 */
 	protected $cachedInstitutes = array();
-
-	/**
-	 * contains institutes only for specified user
-	 *
-	 * @var array
-	 */
-	protected $institutes = array();
 
 	/**
 	 * @var \JWeiland\Hfwupersonal\Utility\DataMapUtility
@@ -73,17 +66,17 @@ class InstituteRepository {
 	 * @return array
 	 */
 	public function findByUserId($userId) {
-		$url = str_replace('###USER###', $userId, $this->restApiUrl);
+		$url = str_replace('|', $userId, $this->restApiUrl);
 		$database = json_decode(GeneralUtility::getUrl($url));
+		$institutes = array();
 		if ($database instanceof \stdClass) {
-			$institutes = array();
+			// in normal cases only work OR study should be filled
 			// add work institutes
 			$this->addInstitutes($database->institutes->work, $institutes);
 			// add study institutes
 			$this->addInstitutes($database->institutes->study, $institutes);
-			$this->institutes = $institutes;
 		}
-		unset($database);
+		return $institutes;
 	}
 
 	/**

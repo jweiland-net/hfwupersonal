@@ -29,7 +29,7 @@ namespace JWeiland\Hfwupersonal\Domain\Model\RestApi;
 /**
  * User
  */
-class Institutes {
+class Institute {
 
 	/**
 	 * instituteId
@@ -39,11 +39,32 @@ class Institutes {
 	protected $instituteId = '';
 
 	/**
-	 * facultyAddress
+	 * room
 	 *
 	 * @var string
 	 */
-	protected $facultyAddress = NULL;
+	protected $room = '';
+
+	/**
+	 * phone
+	 *
+	 * @var string
+	 */
+	protected $phone = '';
+
+	/**
+	 * fax
+	 *
+	 * @var string
+	 */
+	protected $fax = '';
+
+	/**
+	 * consultation
+	 *
+	 * @var string
+	 */
+	protected $consultation = '';
 
 	/**
 	 * Returns the instituteId
@@ -65,23 +86,79 @@ class Institutes {
 	}
 
 	/**
-	 * Returns the facultyAddress
+	 * Returns the room
 	 *
-	 * @return string $facultyAddress
+	 * @return string $room
 	 */
-	public function getFacultyAddress() {
-		return $this->facultyAddress;
+	public function getRoom() {
+		return $this->room;
 	}
 
 	/**
-	 * Sets the facultyAddress
+	 * Sets the room
 	 *
-	 * @param string $facultyAddress
+	 * @param string $room
 	 * @return void
 	 */
-	public function setFacultyAddress($facultyAddress) {
-		$this->facultyAddress = $facultyAddress;
+	public function setRoom($room) {
+		$this->room = $room;
 	}
 
+	/**
+	 * Returns the phone
+	 *
+	 * @return string $phone
+	 */
+	public function getPhone() {
+		return $this->phone;
+	}
+
+	/**
+	 * Sets the phone
+	 *
+	 * @param string $phone
+	 * @return void
+	 */
+	public function setPhone($phone) {
+		$this->phone = $phone;
+	}
+
+	/**
+	 * Returns the fax
+	 *
+	 * @return string $fax
+	 */
+	public function getFax() {
+		return $this->fax;
+	}
+
+	/**
+	 * Sets the fax
+	 *
+	 * @param string $fax
+	 * @return void
+	 */
+	public function setFax($fax) {
+		$this->fax = $fax;
+	}
+
+	/**
+	 * Returns the consultation
+	 *
+	 * @return string $consultation
+	 */
+	public function getConsultation() {
+		return $this->consultation;
+	}
+
+	/**
+	 * Sets the consultation
+	 *
+	 * @param string $consultation
+	 * @return void
+	 */
+	public function setConsultation($consultation) {
+		$this->consultation = $consultation;
+	}
 
 }

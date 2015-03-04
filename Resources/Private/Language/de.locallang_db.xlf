@@ -136,6 +136,10 @@
 				<source>Title</source>
 				<target>Titel</target>
 			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_position.institute_id">
+				<source>Institute ID</source>
+				<target>ID des Institutes</target>
+			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_position.response_times">
 				<source>Office hours</source>
 				<target>Sprechzeiten</target>
