@@ -10,7 +10,7 @@
 <f:if condition="{person.image}">
 	<dl>
 		<dt><f:translate key="tx_hfwupersonal_domain_model_person.image" /></dt>
-		<dd>{person.image}</dd>
+		<dd><f:image image="{person.image}" width="120" maxWidth="120" title="Image" alt="Alt" /></dd>
 	</dl>
 </f:if>
 <f:render partial="Person/Property" arguments="{property: person.imageComment, languageKey: 'image_comment'}" />
