@@ -137,6 +137,7 @@ CREATE TABLE tx_hfwupersonal_domain_model_position (
 	title varchar(255) DEFAULT '' NOT NULL,
 	response_times varchar(255) DEFAULT '' NOT NULL,
 	contacts int(11) unsigned DEFAULT '0' NOT NULL,
+	person int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

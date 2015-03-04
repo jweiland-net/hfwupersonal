@@ -125,4 +125,14 @@ class Synchronize extends AbstractTask {
 		}
 	}
 
+	/**
+	 * synchronize position of person
+	 *
+	 * @param \JWeiland\Hfwupersonal\Domain\Model\Person $person
+	 * @return void
+	 */
+	protected function synchronizePosition(Person $person) {
+		$person->getPositions()->count();
+	}
+
 }

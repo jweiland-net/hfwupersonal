@@ -26,6 +26,7 @@ namespace JWeiland\Hfwupersonal\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * Position
@@ -47,11 +48,31 @@ class Position extends AbstractEntity {
 	protected $responseTimes = '';
 
 	/**
+	 * Contacts
+	 *
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Hfwupersonal\Domain\Model\Contact>
+	 * @cascade remove
+	 */
+	protected $contacts = NULL;
+
+	/**
 	 * category
 	 *
 	 * @var \TYPO3\CMS\Extbase\Domain\Model\Category
 	 */
 	protected $category = NULL;
+
+	/**
+	 * Initializes all ObjectStorage properties
+	 * Do not modify this method!
+	 * It will be rewritten on each save in the extension builder
+	 * You may modify the constructor of this class instead
+	 *
+	 * @return void
+	 */
+	protected function initStorageObjects() {
+		$this->contacts = new ObjectStorage();
+	}
 
 	/**
 	 * Returns the title
@@ -89,6 +110,45 @@ class Position extends AbstractEntity {
 	 */
 	public function setResponseTimes($responseTimes) {
 		$this->responseTimes = $responseTimes;
+	}
+
+	/**
+	 * Adds a Contact
+	 *
+	 * @param \JWeiland\Hfwupersonal\Domain\Model\Contact $contact
+	 * @return void
+	 */
+	public function addContact(\JWeiland\Hfwupersonal\Domain\Model\Contact $contact) {
+		$this->contacts->attach($contact);
+	}
+
+	/**
+	 * Removes a Contact
+	 *
+	 * @param \JWeiland\Hfwupersonal\Domain\Model\Contact $contact
+	 * @return void
+	 */
+	public function removeContact(\JWeiland\Hfwupersonal\Domain\Model\Contact $contact) {
+		$this->contacts->detach($contact);
+	}
+
+	/**
+	 * Returns the contacts
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $contacts
+	 */
+	public function getContacts() {
+		return $this->contacts;
+	}
+
+	/**
+	 * Sets the contacts
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $contacts
+	 * @return void
+	 */
+	public function setContacts(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $contacts) {
+		$this->contacts = $contacts;
 	}
 
 	/**

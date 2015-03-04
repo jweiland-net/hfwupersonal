@@ -296,14 +296,18 @@ return array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.positions',
 			'config' => array(
-				'type' => 'select',
+				'type' => 'inline',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_position',
 				'foreign_field' => 'person',
-				'MM' => 'tx_hfwupersonal_person_position_mm',
-				'size' => 5,
-				'autoSizeMax' => 10,
 				'maxitems' => 99,
-				'enableMultiSelectFilterTextfield' => TRUE
+				'minitems' => 0,
+				'appearance' => array(
+					'collapseAll' => 0,
+					'levelLinksPosition' => 'top',
+					'showSynchronizationLink' => 1,
+					'showPossibleLocalizationRecords' => 1,
+					'showAllLocalizationLink' => 1
+				),
 			),
 		),
 		'activities' => array(

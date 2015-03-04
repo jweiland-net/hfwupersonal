@@ -138,5 +138,10 @@ return array(
 				),
 			),
 		),
+		'person' => array(
+			'config' => array(
+				'type' => 'passthrough',
+			),
+		),
 	),
 );
