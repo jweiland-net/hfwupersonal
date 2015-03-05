@@ -78,13 +78,17 @@ class PersonController extends ActionController {
 	 * @return void
 	 */
 	public function listAction() {
-		$persons = $this->personRepository->findByFilters(
-			$this->settings['filterAnd'],
-			$this->settings['filterOr'],
-			$this->settings['filterNot']
-		);
-		$this->view->assign('pageUid', $GLOBALS['TSFE']->id);
-		$this->view->assign('persons', $persons);
+		if (!empty($this->settings['person'])) {
+			$this->forward('show', 'Person', NULL, array('person' => $this->settings['person']));
+		} else {
+			$persons = $this->personRepository->findByFilters(
+				$this->settings['filterAnd'],
+				$this->settings['filterOr'],
+				$this->settings['filterNot']
+			);
+			$this->view->assign('pageUid', $GLOBALS['TSFE']->id);
+			$this->view->assign('persons', $persons);
+		}
 	}
 
 	/**

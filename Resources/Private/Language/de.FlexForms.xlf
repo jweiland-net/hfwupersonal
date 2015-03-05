@@ -8,9 +8,9 @@
 				<source>General</source>
 				<target>Allgemein</target>
 			</trans-unit>
-			<trans-unit id="filterByCategories">
-				<source>Filter by categories</source>
-				<target>Nach Kategorien filtern</target>
+			<trans-unit id="person">
+				<source>If you choose a person, the plugin will show you a detail view</source>
+				<target>Wenn Sie eine Person vorauswählen, dann wechselt dieses Plugin automatisch in die Detailansicht</target>
 			</trans-unit>
 
 			<trans-unit id="sheetFilter">

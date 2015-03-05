@@ -10,27 +10,27 @@
 				</TCEforms>
 				<type>array</type>
 				<el>
-					<settings.filterByCategories>
+					<settings.person>
 						<TCEforms>
-							<label>LLL:EXT:hfwupersonal/Resources/Private/Language/FlexForms.xlf:filterByCategories</label>
+							<label>LLL:EXT:hfwupersonal/Resources/Private/Language/FlexForms.xlf:person</label>
 							<config>
-								<type>select</type>
-								<foreign_table>sys_category</foreign_table>
-								<renderMode>tree</renderMode>
-								<treeConfig>
-									<parentField>parent</parentField>
-									<rootUid>0</rootUid>
-									<appearance>
-										<showHeader>TRUE</showHeader>
-										<expandAll>FALSE</expandAll>
-									</appearance>
-								</treeConfig>
-								<size>15</size>
-								<maxitems>99</maxitems>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>tx_hfwupersonal_domain_model_person</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
 								<minitems>0</minitems>
+								<wizards>
+									<suggest>
+										<type>suggest</type>
+										<default>
+											<searchWholePhrase>TRUE</searchWholePhrase>
+										</default>
+									</suggest>
+								</wizards>
 							</config>
 						</TCEforms>
-					</settings.filterByCategories>
+					</settings.person>
 				</el>
 			</ROOT>
 		</sDEFAULT>

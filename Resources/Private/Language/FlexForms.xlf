@@ -7,8 +7,8 @@
 			<trans-unit id="sheetGeneral">
 				<source>General</source>
 			</trans-unit>
-			<trans-unit id="filterByCategories">
-				<source>Filter by categories</source>
+			<trans-unit id="person">
+				<source>If you choose a person, the plugin will show you a detail view</source>
 			</trans-unit>
 
 			<trans-unit id="sheetFilter">

@@ -91,6 +91,9 @@
 			<trans-unit id="tx_hfwupersonal_domain_model_contact.type.telephone">
 				<source>Telephone</source>
 			</trans-unit>
+			<trans-unit id="tx_hfwupersonal_domain_model_contact.type.mobile">
+				<source>Mobile</source>
+			</trans-unit>
 			<trans-unit id="tx_hfwupersonal_domain_model_contact.type.fax">
 				<source>Fax</source>
 			</trans-unit>

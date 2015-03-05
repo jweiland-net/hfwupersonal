@@ -108,6 +108,7 @@ return array(
 				'type' => 'radio',
 				'items' => array(
 					array('LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_contact.type.telephone', 'telephone'),
+					array('LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_contact.type.mobile', 'mobile'),
 					array('LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_contact.type.fax', 'fax'),
 				),
 				'default' => 'telephone'
