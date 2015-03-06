@@ -105,8 +105,8 @@ class PersonController extends ActionController {
 			$profilePage = $person->getProfilePage()->getLink();
 		}
 
-		// redirect to profile page if set
-		if (!empty($profilePage) && MathUtility::canBeInterpretedAsInteger($profilePage)) {
+		// redirect to profile page if set AND we are NOT already on profile page
+		if (!empty($profilePage) && MathUtility::canBeInterpretedAsInteger($profilePage) && $GLOBALS['TSFE']->id != $profilePage) {
 			$this->redirectToUri($this->uriBuilder->reset()->setTargetPageUid($profilePage)->build());
 		} else {
 			$this->view->assign('person', $person);
