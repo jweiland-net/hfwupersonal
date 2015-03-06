@@ -29,7 +29,15 @@
 			<f:for each="{person.positions}" as="position">
 				<li>
 					<strong>{position.title}</strong><br />
-					{position.responseTimes}
+					<div>{position.responseTimes}</div>
+					<f:if condition="{position.contacts}">
+						<strong>Telefonnummern</strong>
+						<ul>
+							<f:for each="{position.contacts}" as="contact">
+								<li><f:translate key="tx_hfwupersonal_domain_model_contact.type.{contact.type}" />: {contact.contact}</li>
+							</f:for>
+						</ul>
+					</f:if>
 				</li>
 			</f:for>
 		</ul>

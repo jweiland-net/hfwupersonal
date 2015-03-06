@@ -26,6 +26,7 @@ namespace JWeiland\Hfwupersonal\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -98,7 +99,18 @@ class PersonController extends ActionController {
 	 * @return void
 	 */
 	public function showAction(\JWeiland\Hfwupersonal\Domain\Model\Person $person) {
-		$this->view->assign('person', $person);
+		$profilePage = 0;
+
+		if ($person->getProfilePage() !== NULL) {
+			$profilePage = $person->getProfilePage()->getLink();
+		}
+
+		// redirect to profile page if set
+		if (!empty($profilePage) && MathUtility::canBeInterpretedAsInteger($profilePage)) {
+			$this->redirectToUri($this->uriBuilder->reset()->setTargetPageUid($profilePage)->build());
+		} else {
+			$this->view->assign('person', $person);
+		}
 	}
 
 	/**
