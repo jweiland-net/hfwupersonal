@@ -188,6 +188,9 @@ class Synchronize extends AbstractTask implements ProgressProviderInterface {
 				$this->registry->set('hfwu', 'currentUserId', $user->getUserId());
 				$person = $this->personRepository->findOneByStudIp($user->getUserId());
 				if (empty($person)) {
+					$person = $this->personRepository->findOneByEmail($user->getEmail());
+				}
+				if (empty($person)) {
 					// add new person
 					/** @var \Jweiland\Hfwupersonal\Domain\Model\Person $person */
 					$person = $this->objectManager->get('Jweiland\\Hfwupersonal\\Domain\\Model\\Person');
@@ -208,6 +211,7 @@ class Synchronize extends AbstractTask implements ProgressProviderInterface {
 					$person->setFirstName($user->getVorname());
 					$person->setLastName($user->getNachname());
 					$person->setEmail($user->getEmail());
+					$person->setStudIp($user->getUserId());
 
 					// add position
 					$this->synchronizePosition($person);
