@@ -116,12 +116,17 @@ class PersonRepository extends Repository {
 	 */
 	public function findBySearch($search) {
 		$query = $this->createQuery();
+		if (strlen($search) > 0 && strlen($search) <= 2) {
+			$search = $search . '%';
+		} else {
+			$search = '%' . $search . '%';
+		}
 		$constraint = array();
 		// ToDo: add escapeForLike
-		$constraint[] = $query->like('firstName', '%' . $search . '%');
-		$constraint[] = $query->like('lastName', '%' . $search . '%');
-		$constraint[] = $query->like('email', '%' . $search . '%');
-		$constraint[] = $query->like('positions.title', '%' . $search . '%');
+		$constraint[] = $query->like('firstName', $search);
+		$constraint[] = $query->like('lastName', $search);
+		$constraint[] = $query->like('email', $search);
+		$constraint[] = $query->like('positions.title', $search);
 		return $query->matching($query->logicalOr($constraint))->execute();
 	}
 

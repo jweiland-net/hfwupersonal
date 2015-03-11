@@ -268,6 +268,15 @@ class Person extends AbstractEntity {
 	}
 
 	/**
+	 * Returns the firstLetterOfLastName
+	 *
+	 * @return string $firstLetterOfLastName
+	 */
+	public function getFirstLetterOfLastName() {
+		return strtoupper($this->lastName[0]);
+	}
+
+	/**
 	 * Returns the email
 	 *
 	 * @return string $email

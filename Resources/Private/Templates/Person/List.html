@@ -22,8 +22,24 @@
 			<th><f:translate key="tx_hfwupersonal_domain_model_person.email" /></th>
 		</tr>
 
-		<f:widget.paginate objects="{persons}" as="paginatedPersons" configuration="{itemsPerPage: settings.pageBrowser.itemsPerPage}">
-			<f:for each="{paginatedPersons}" as="person">
+		<f:comment>
+			<f:widget.paginate objects="{persons}" as="paginatedPersons" configuration="{itemsPerPage: settings.pageBrowser.itemsPerPage}">
+				<f:for each="{paginatedPersons}" as="person">
+					<tr>
+						<td>{person.title}</td>
+						<td>{person.firstName}</td>
+						<td><f:link.action action="show" pageUid="{f:if(condition: person.profilePage.link, then: person.profilePage.link, else: settings.pidOfDetailPage)}" arguments="{person: person}">{person.lastName}</f:link.action></td>
+						<td>{person.email}</td>
+					</tr>
+				</f:for>
+			</f:widget.paginate>
+		</f:comment>
+
+		<f:groupedFor each="{persons}" as="groupedPersons" groupBy="firstLetterOfLastName" groupKey="firstLetterOfLastName">
+			<f:for each="{groupedPersons}" as="person">
+				<tr>
+					<td colspan="4" id="letter-{firstLetterOfLastName}">{firstLetterOfLastName}</td>
+				</tr>
 				<tr>
 					<td>{person.title}</td>
 					<td>{person.firstName}</td>
@@ -31,6 +47,6 @@
 					<td>{person.email}</td>
 				</tr>
 			</f:for>
-		</f:widget.paginate>
+		</f:groupedFor>
 	</table>
 </f:section>
