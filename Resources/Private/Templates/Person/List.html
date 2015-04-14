@@ -1,3 +1,5 @@
+{namespace hfwu=JWeiland\Hfwupersonal\ViewHelpers}
+
 <f:layout name="Default" />
 
 <f:section name="main">
@@ -35,18 +37,20 @@
 			</f:widget.paginate>
 		</f:comment>
 
-		<f:groupedFor each="{persons}" as="groupedPersons" groupBy="firstLetterOfLastName" groupKey="firstLetterOfLastName">
-			<f:for each="{groupedPersons}" as="person">
+		<f:alias map="{sortedPersons: '{persons->hfwu:sort(sortBy: \'firstName\', order: \'DESC\')}'}">
+			<f:groupedFor each="{sortedPersons}" as="groupedPersons" groupBy="firstLetterOfLastName" groupKey="firstLetterOfLastName">
 				<tr>
 					<td colspan="4" id="letter-{firstLetterOfLastName}">{firstLetterOfLastName}</td>
 				</tr>
-				<tr>
-					<td>{person.title}</td>
-					<td>{person.firstName}</td>
-					<td><f:link.action action="show" pageUid="{f:if(condition: person.profilePage.link, then: person.profilePage.link, else: settings.pidOfDetailPage)}" arguments="{person: person}">{person.lastName}</f:link.action></td>
-					<td>{person.email}</td>
-				</tr>
-			</f:for>
-		</f:groupedFor>
+				<f:for each="{groupedPersons}" as="person">
+					<tr>
+						<td>{person.title}</td>
+						<td>{person.firstName}</td>
+						<td><f:link.action action="show" pageUid="{f:if(condition: person.profilePage.link, then: person.profilePage.link, else: settings.pidOfDetailPage)}" arguments="{person: person}">{person.lastName}</f:link.action></td>
+						<td>{person.email}</td>
+					</tr>
+				</f:for>
+			</f:groupedFor>
+		</f:alias>
 	</table>
 </f:section>
