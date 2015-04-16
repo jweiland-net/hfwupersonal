@@ -31,6 +31,25 @@
 							</config>
 						</TCEforms>
 					</settings.person>
+					<settings.fastMode>
+						<TCEforms>
+							<label>LLL:EXT:hfwupersonal/Resources/Private/Language/FlexForms.xlf:fastMode</label>
+							<config>
+								<type>radio</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">LLL:EXT:hfwupersonal/Resources/Private/Language/FlexForms.xlf:fastMode.on</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">LLL:EXT:hfwupersonal/Resources/Private/Language/FlexForms.xlf:fastMode.off</numIndex>
+										<numIndex index="1">0</numIndex>
+									</numIndex>
+								</items>
+								<default>0</default>
+							</config>
+						</TCEforms>
+					</settings.fastMode>
 				</el>
 			</ROOT>
 		</sDEFAULT>

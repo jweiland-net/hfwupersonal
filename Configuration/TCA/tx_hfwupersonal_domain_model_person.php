@@ -181,18 +181,15 @@ return array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:hfwupersonal/Resources/Private/Language/locallang_db.xlf:tx_hfwupersonal_domain_model_person.contacts',
 			'config' => array(
-				'type' => 'inline',
+				'type' => 'select',
 				'foreign_table' => 'tx_hfwupersonal_domain_model_contact',
+				'foreign_table_where' => 'ORDER BY tx_hfwupersonal_domain_model_contact.contact ASC',
 				'MM' => 'tx_hfwupersonal_person_contact_mm',
 				'minitems' => 0,
 				'maxitems' => 99,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
+				'size' => 7,
+				'autoSizeMax' => 20,
+				'enableMultiSelectFilterTextfield' => TRUE,
 			),
 		),
 		'profile_page' => array(

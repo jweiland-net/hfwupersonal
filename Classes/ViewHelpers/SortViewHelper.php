@@ -26,44 +26,15 @@ namespace JWeiland\Hfwupersonal\ViewHelpers;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
-use TYPO3\CMS\Extbase\Persistence\Generic\LazyObjectStorage;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
-use TYPO3\CMS\Extbase\Reflection\ObjectAccess;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Fluid\Core\ViewHelper\Exception;
 
 /**
- * Sorts an instance of ObjectStorage, an Iterator implementation,
- * an Array or a QueryResult (including Lazy counterparts).
- *
- * Can be used inline, i.e.:
- * <f:for each="{dataset -> vhs:iterator.sort(sortBy: 'name')}" as="item">
- *    // iterating data which is ONLY sorted while rendering this particular loop
- * </f:for>
- *
  * @author Stefan Froemken <projects@jweiland.net>
- * @author Claus Due <claus@namelesscoder.net>
- * @package Vhs
- * @subpackage ViewHelpers
  */
 class SortViewHelper extends AbstractViewHelper {
-
-	/**
-	 * Contains all flags that are allowed to be used
-	 * with the sorting functions
-	 *
-	 * @var array
-	 */
-	protected $allowedSortFlags = array(
-		'SORT_REGULAR',
-		'SORT_STRING',
-		'SORT_NUMERIC',
-		'SORT_NATURAL',
-		'SORT_LOCALE_STRING',
-		'SORT_FLAG_CASE'
-	);
 
 	/**
 	 * Initialize arguments
@@ -71,10 +42,9 @@ class SortViewHelper extends AbstractViewHelper {
 	 * @return void
 	 */
 	public function initializeArguments() {
-		$this->registerArgument('subject', 'mixed', 'The array/Traversable instance to sort', FALSE, NULL);
-		$this->registerArgument('sortBy', 'string', 'Which property/field to sort by - leave out for numeric sorting based on indexes(keys)');
-		$this->registerArgument('order', 'string', 'ASC, DESC, RAND or SHUFFLE. RAND preserves keys, SHUFFLE does not - but SHUFFLE is faster', FALSE, 'ASC');
-		$this->registerArgument('sortFlags', 'array', 'Constant name from PHP for `SORT_FLAGS`: `SORT_REGULAR`, `SORT_STRING`, `SORT_NUMERIC`, `SORT_NATURAL`, `SORT_LOCALE_STRING` or `SORT_FLAG_CASE`. You can provide a comma seperated list or array to use a combination of flags.', FALSE, array('SORT_REGULAR'));
+		$this->registerArgument('subject', 'QueryResultInterface', 'The QueryResult object to sort', FALSE, NULL);
+		$this->registerArgument('sortBy', 'string', 'Which property to sort by', TRUE);
+		$this->registerArgument('direction', 'string', 'ASC or DESC', FALSE, 'ASC');
 	}
 
 	/**
@@ -84,7 +54,7 @@ class SortViewHelper extends AbstractViewHelper {
 	 * Returns the same type as $subject. Ignores NULL values which would be
 	 * OK to use in an f:for (empty loop as result)
 	 *
-	 * @return mixed
+	 * @return array
 	 * @throws \Exception
 	 */
 	public function render() {
@@ -93,121 +63,60 @@ class SortViewHelper extends AbstractViewHelper {
 		} else {
 			$subject = $this->arguments['subject'];
 		}
-		$sorted = NULL;
-		if (TRUE === is_array($subject)) {
-			$sorted = $this->sortArray($subject);
-		} else {
-			if (TRUE === $subject instanceof ObjectStorage || TRUE === $subject instanceof LazyObjectStorage) {
-				$sorted = $this->sortObjectStorage($subject);
-			} elseif (TRUE === $subject instanceof \Iterator) {
-				/** @var \Iterator $subject */
-				$array = iterator_to_array($subject, TRUE);
-				$sorted = $this->sortArray($array);
-			} elseif (TRUE === $subject instanceof QueryResultInterface) {
-				/** @var QueryResultInterface $subject */
-				$sorted = $this->sortArray($subject->toArray());
-			} elseif (NULL !== $subject) {
-				// a NULL value is respected and ignored, but any
-				// unrecognized value other than this is considered a
-				// fatal error.
-				throw new \Exception('Unsortable variable type passed to Iterator/SortViewHelper. Expected any of Array, QueryResult, ' .
-					' ObjectStorage or Iterator implementation but got ' . gettype($subject), 1351958941);
-			}
-		}
-		return $sorted;
-	}
-
-	/**
-	 * Sort an array
-	 *
-	 * @param array|\Iterator $array
-	 * @return array
-	 */
-	protected function sortArray($array) {
 		$sorted = array();
-		foreach ($array as $index => $object) {
-			if (TRUE === isset($this->arguments['sortBy'])) {
-				$index = $this->getSortValue($object);
+		if ($subject instanceof QueryResultInterface) {
+			/** @var QueryResultInterface $subject */
+			/** @var QueryInterface $query */
+			$query = $subject->getQuery();
+			$query->setOrderings(array(
+				$this->arguments['sortBy'] => $this->arguments['direction']
+			));
+			$sorted = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\QueryResultInterface', $query);
+		} elseif (is_array($subject)) {
+			reset($subject);
+			$firstElement = current($subject);
+			if (is_object($firstElement)) {
+				usort($subject, array($this, 'sortObject'));
+			} elseif (is_array($firstElement)) {
+				usort($subject, array($this, 'sortArray'));
 			}
-			while (isset($sorted[$index])) {
-				$index .= '.1';
-			}
-			$sorted[$index] = $object;
-		}
-		if ('ASC' === $this->arguments['order']) {
-			ksort($sorted, $this->getSortFlags());
-		} elseif ('RAND' === $this->arguments['order']) {
-			$sortedKeys = array_keys($sorted);
-			shuffle($sortedKeys);
-			$backup = $sorted;
-			$sorted = array();
-			foreach ($sortedKeys as $sortedKey) {
-				$sorted[$sortedKey] = $backup[$sortedKey];
-			}
-		} elseif ('SHUFFLE' === $this->arguments['order']) {
-			shuffle($sorted);
-		} else {
-			krsort($sorted, $this->getSortFlags());
+			$sorted = $subject;
 		}
 		return $sorted;
 	}
 
 	/**
-	 * Sort an ObjectStorage instance
-	 *
-	 * @param ObjectStorage $storage
-	 * @return ObjectStorage
-	 */
-	protected function sortObjectStorage($storage) {
-		/** @var ObjectManager $objectManager */
-		$objectManager = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-		/** @var ObjectStorage $temp */
-		$temp = $objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage');
-		foreach ($storage as $item) {
-			$temp->attach($item);
-		}
-		$sorted = $this->sortArray($storage);
-		$storage = $objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage');
-		foreach ($sorted as $item) {
-			$storage->attach($item);
-		}
-		return $storage;
-	}
-
-	/**
-	 * Gets the value to use as sorting value from $object
-	 *
-	 * @param mixed $object
-	 * @return mixed
-	 */
-	protected function getSortValue($object) {
-		$field = $this->arguments['sortBy'];
-		$value = ObjectAccess::getPropertyPath($object, $field);
-		if (TRUE === $value instanceof \DateTime) {
-			$value = intval($value->format('U'));
-		} elseif (TRUE === $value instanceof ObjectStorage || TRUE === $value instanceof LazyObjectStorage) {
-			$value = $value->count();
-		} elseif (is_array($value)) {
-			$value = count($value);
-		}
-		return $value;
-	}
-
-	/**
-	 * Parses the supplied flags into the proper value for the sorting
-	 * function.
+	 * @param \JWeiland\Hfwupersonal\Domain\Model\Person $a
+	 * @param \JWeiland\Hfwupersonal\Domain\Model\Person $b
 	 * @return int
-	 * @throws Exception
 	 */
-	protected function getSortFlags() {
-		$constants = $this->arguments['sortFlags'];
-		$flags = 0;
-		foreach ($constants as $constant) {
-			if (FALSE === in_array($constant, $this->allowedSortFlags)) {
-				throw new Exception('The constant "' . $constant . '" you\'re trying to use as a sortFlag is not allowed. Allowed constants are: ' . implode(', ', $this->allowedSortFlags) . '.', 1404220538);
-			}
-			$flags = $flags | constant(trim($constant));
+	public function sortObject($a, $b) {
+		$getter = 'get' . ucfirst($this->arguments['sortBy']);
+		$varA = $a->$getter();
+		$varB = $b->$getter();
+		if ($varA > $varB) {
+			return $this->arguments['direction'] === 'ASC' ? 1 : -1;
+		} elseif ($varA < $varB) {
+			return $this->arguments['direction'] === 'ASC' ? -1 : 1;
+		} else {
+			return 0;
 		}
-		return $flags;
+	}
+
+	/**
+	 * @param array $a
+	 * @param array $b
+	 * @return int
+	 */
+	public function sortArray($a, $b) {
+		$varA = $a[$this->arguments['sortBy']];
+		$varB = $b[$this->arguments['sortBy']];
+		if ($varA > $varB) {
+			return $this->arguments['direction'] === 'ASC' ? 1 : -1;
+		} elseif ($varA < $varB) {
+			return $this->arguments['direction'] === 'ASC' ? -1 : 1;
+		} else {
+			return 0;
+		}
 	}
 }

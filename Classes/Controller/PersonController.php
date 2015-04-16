@@ -80,13 +80,15 @@ class PersonController extends ActionController {
 	 * @return void
 	 */
 	public function listAction() {
+		// if a person is set in FlexForm we redirect to show action immediately
 		if (!empty($this->settings['person'])) {
 			$this->forward('show', 'Person', NULL, array('person' => $this->settings['person']));
 		} else {
 			$persons = $this->personRepository->findByFilters(
 				$this->settings['filterAnd'],
 				$this->settings['filterOr'],
-				$this->settings['filterNot']
+				$this->settings['filterNot'],
+				(bool)$this->settings['fastMode']
 			);
 			$this->view->assign('pageUid', $GLOBALS['TSFE']->id);
 			$this->view->assign('persons', $persons);

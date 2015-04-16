@@ -51,11 +51,25 @@ class PersonRepository extends Repository {
 	 * @param string $filterAnd
 	 * @param string $filterOr
 	 * @param string $filterNot
+	 * @param bool $fastMode
 	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface|array
 	 */
-	public function findByFilters($filterAnd, $filterOr, $filterNot) {
+	public function findByFilters($filterAnd, $filterOr, $filterNot, $fastMode = FALSE) {
 		if (empty($filterAnd) && empty($filterOr) && empty($filterNot)) {
-			return $this->findAll();
+			if ($fastMode) {
+				$query = $this->createQuery();
+				$rows = array();
+				$temp = $query->execute(TRUE);
+				foreach ($temp as $key => $row) {
+					foreach ($row as $property => $value) {
+						$rows[$key][GeneralUtility::underscoredToLowerCamelCase($property)] = $value;
+					}
+					$rows[$key]['firstLetterOfLastName'] = strtoupper($row['last_name'][0]);
+				}
+				return $rows;
+			} else {
+				return $this->findAll();
+			}
 		}
 
 		$query = $this->createQuery();

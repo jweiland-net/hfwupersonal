@@ -44,6 +44,7 @@ class Person extends AbstractEntity {
 	 * priority
 	 *
 	 * @var \JWeiland\Hfwupersonal\Domain\Model\Priority
+	 * @lazy
 	 */
 	protected $priority = NULL;
 
@@ -93,6 +94,7 @@ class Person extends AbstractEntity {
 	 * Categories
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
+	 * @lazy
 	 */
 	protected $categories = NULL;
 
@@ -100,7 +102,7 @@ class Person extends AbstractEntity {
 	 * Contacts
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Hfwupersonal\Domain\Model\Contact>
-	 * @cascade remove
+	 * @lazy
 	 */
 	protected $contacts = NULL;
 
@@ -108,6 +110,7 @@ class Person extends AbstractEntity {
 	 * Profile page
 	 *
 	 * @var \JWeiland\Hfwupersonal\Domain\Model\Link
+	 * @lazy
 	 * @cascade remove
 	 */
 	protected $profilePage = NULL;
@@ -116,6 +119,7 @@ class Person extends AbstractEntity {
 	 * Links
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Hfwupersonal\Domain\Model\Link>
+	 * @lazy
 	 * @cascade remove
 	 */
 	protected $links = NULL;
@@ -124,6 +128,7 @@ class Person extends AbstractEntity {
 	 * FeGroup
 	 *
 	 * @var \TYPO3\CMS\Extbase\Domain\Model\FrontendUserGroup
+	 * @lazy
 	 */
 	protected $frontendUserGroup = NULL;
 
@@ -131,6 +136,7 @@ class Person extends AbstractEntity {
 	 * BackendUserGroups
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\BackendUserGroup>
+	 * @lazy
 	 */
 	protected $backendUserGroups = NULL;
 
@@ -138,6 +144,7 @@ class Person extends AbstractEntity {
 	 * Address
 	 *
 	 * @var \JWeiland\Hfwupersonal\Domain\Model\Address
+	 * @lazy
 	 */
 	protected $address = NULL;
 
@@ -145,7 +152,7 @@ class Person extends AbstractEntity {
 	 * Location
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Hfwupersonal\Domain\Model\Location>
-	 * @cascade remove
+	 * @lazy
 	 */
 	protected $locations = NULL;
 
@@ -153,6 +160,7 @@ class Person extends AbstractEntity {
 	 * Positions
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Hfwupersonal\Domain\Model\Position>
+	 * @lazy
 	 * @cascade remove
 	 */
 	protected $positions = NULL;
@@ -161,7 +169,7 @@ class Person extends AbstractEntity {
 	 * Activities
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Hfwupersonal\Domain\Model\Activity>
-	 * @cascade remove
+	 * @lazy
 	 */
 	protected $activities = NULL;
 

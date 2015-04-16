@@ -12,6 +12,18 @@
 				<source>If you choose a person, the plugin will show you a detail view</source>
 				<target>Wenn Sie eine Person vorauswählen, dann wechselt dieses Plugin automatisch in die Detailansicht</target>
 			</trans-unit>
+			<trans-unit id="fastMode">
+				<source>Fast mode (only relevant for list-mode)</source>
+				<target>Schneller Modus (nur für den Listenmodus relevant)</target>
+			</trans-unit>
+			<trans-unit id="fastMode.on">
+				<source>ON - You can only access non-related properties of a person like title, firstName and email</source>
+				<target>AN - Sie können nur noch nicht in Relation stehende Eigenschaften der Person ansprechen wie Title, Vorname, Nachname und E-Mail</target>
+			</trans-unit>
+			<trans-unit id="fastMode.off">
+				<source>OFF - You can access all properties of a person incl. all relations like telephone, fax, position and address</source>
+				<target>AUS - Sie habe Zugriff auf alle Eigenschaften der Person inkl. aller Relationen wie Telefon, Fax, Position und Adresse</target>
+			</trans-unit>
 
 			<trans-unit id="sheetFilter">
 				<source>Filter</source>

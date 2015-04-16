@@ -37,20 +37,18 @@
 			</f:widget.paginate>
 		</f:comment>
 
-		<f:alias map="{sortedPersons: '{persons->hfwu:sort(sortBy: \'firstName\', order: \'DESC\')}'}">
-			<f:groupedFor each="{sortedPersons}" as="groupedPersons" groupBy="firstLetterOfLastName" groupKey="firstLetterOfLastName">
+		<f:groupedFor each="{persons}" as="groupedPersons" groupBy="firstLetterOfLastName" groupKey="firstLetterOfLastName">
+			<tr>
+				<td colspan="4" id="letter-{firstLetterOfLastName}">{firstLetterOfLastName}</td>
+			</tr>
+			<f:for each="{groupedPersons->hfwu:sort(sortBy: 'firstName')}" as="person">
 				<tr>
-					<td colspan="4" id="letter-{firstLetterOfLastName}">{firstLetterOfLastName}</td>
+					<td>{person.title}</td>
+					<td>{person.firstName}</td>
+					<td><f:link.action action="show" pageUid="{f:if(condition: person.profilePage.link, then: person.profilePage.link, else: settings.pidOfDetailPage)}" arguments="{person: person}">{person.lastName}</f:link.action></td>
+					<td>{person.email}</td>
 				</tr>
-				<f:for each="{groupedPersons}" as="person">
-					<tr>
-						<td>{person.title}</td>
-						<td>{person.firstName}</td>
-						<td><f:link.action action="show" pageUid="{f:if(condition: person.profilePage.link, then: person.profilePage.link, else: settings.pidOfDetailPage)}" arguments="{person: person}">{person.lastName}</f:link.action></td>
-						<td>{person.email}</td>
-					</tr>
-				</f:for>
-			</f:groupedFor>
-		</f:alias>
+			</f:for>
+		</f:groupedFor>
 	</table>
 </f:section>
